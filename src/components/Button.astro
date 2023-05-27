@@ -1,0 +1,41 @@
+---
+export interface Props {
+  type: "primary" | "secondary";
+  text: string;
+}
+
+const { type, text } = Astro.props;
+---
+
+<button
+  class={` px-10 py-3 rounded-[24px] text-xl font-semibold transition-all duration-200
+    ${type} 
+  `}
+>
+  {text}
+</button>
+
+<style>
+  .primary {
+    color: theme("colors.white");
+    background: var(--main-gradient);
+    box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
+  }
+
+  .primary:hover {
+    color: theme("colors.black");
+    box-shadow: 0px 2px 10px rgba(255, 8, 68, 0.5);
+  }
+
+  .secondary {
+    color: theme("colors.black");
+    background-color: theme("colors.white");
+    border: 1px solid theme("colors.red");
+  }
+
+  .secondary:hover {
+    color: theme("colors.white");
+    background-color: theme("colors.red-light");
+    border: 1px solid theme("colors.red-light");
+  }
+</style>
