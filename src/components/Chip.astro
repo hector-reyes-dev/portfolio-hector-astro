@@ -1,0 +1,35 @@
+---
+export interface Props {
+  status: "new" | "building" | "featured";
+}
+
+const statusList = {
+  new: "Nuevo",
+  building: "En construcción",
+  featured: "Destacado",
+};
+
+const { status } = Astro.props;
+const text = statusList[status];
+---
+
+<span class={`m-2 py-1 px-3 rounded-full text-sm ${status}`}>
+  {text}
+</span>
+
+<style>
+  .new {
+    color: theme("colors.white");
+    background: var(--red-gradient);
+  }
+
+  .building {
+    color: theme("colors.white");
+    background: var(--purple-gradient);
+  }
+
+  .featured {
+    color: theme("colors.black");
+    background: var(--orange-gradient);
+  }
+</style>
