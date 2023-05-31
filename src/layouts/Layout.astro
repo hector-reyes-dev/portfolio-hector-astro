@@ -25,7 +25,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <main class="m-auto p-6 w-[50%] max-w-[90%]">
+    <main class="m-auto p-6 2xl:w-3/5 xl:w-2/3 lg:w-4/5 md:w-3/4 sm:w-full">
       <Background />
       <slot />
     </main>
@@ -54,7 +54,14 @@ const { title } = Astro.props;
     background-color: theme("colors.white");
   }
 
-  p {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span {
     color: theme("colors.black");
   }
 </style>
