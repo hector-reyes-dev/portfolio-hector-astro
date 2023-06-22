@@ -3,26 +3,27 @@ import Welcome from "../components/Welcome.astro";
 import Button from "../components/Button.astro";
 ---
 
-<section class="flex items-center">
+<section class="w-full flex items-center">
   <img
     width="320px"
     height="auto"
     src="/assets/food-mood-mockup-img.png"
     alt="Proyecto Food Mood. Mock up pantalla de inicio."
+    class="hidden md:block"
   />
   <div class="flex flex-col gap-4 p-6">
     <Welcome />
-    <h1 class="text-red-light text-3xl leading-10">
+    <h1 class="text-red-light text-2xl md:text-3xl leading-10">
       ¡Hola! Soy <strong>Héctor Reyes</strong>. Trabajo como <strong
         >Desarrollador Front-End</strong
-      > y <strong>UI & UX Designer</strong>. Actualmente vivo en México.
+      > y <strong>UI & UX Designer</strong>.
     </h1>
     <p class="text-lg">
       Interesado en proyectos escalables que permitan participar en todo el
       flujo de diseño y desarrollo sin importar el tamaño del mismo.
     </p>
     <!-- Logos -->
-    <div class="flex gap-8 mt-8">
+    <div class="flex flex-col gap-8 mt-8 md:flex-row">
       <Button type="primary" text="¡Contáctame!" />
       <Button type="secondary" text="Ver Servicios" />
     </div>
