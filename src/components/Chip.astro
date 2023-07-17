@@ -1,20 +1,24 @@
 ---
 export interface Props {
-  status: "new" | "building" | "featured";
+  status: "new" | "building" | "featured" | "resourceDone" | "resource";
+  label?: string;
 }
+
+const { status, label } = Astro.props;
 
 const statusList = {
   new: "Nuevo",
   building: "En construcción",
   featured: "Destacado",
+  resourceDone: label,
+  resource: "En construcción",
 };
 
-const { status } = Astro.props;
 const text = statusList[status];
 ---
 
-<span class={`m-2 py-1 px-3 rounded-full text-sm ${status}`}>
-  {text}
+<span class={`py-1 px-3 rounded-full text-sm ${status}`}>
+  {label ? label : text}
 </span>
 
 <style>
@@ -31,5 +35,15 @@ const text = statusList[status];
   .featured {
     color: theme("colors.black");
     background: var(--orange-gradient);
+  }
+
+  .resourceDone {
+    color: theme("colors.light-gray");
+    background: theme("colors.dark-gray");
+  }
+
+  .resource {
+    color: theme("colors.dark-gray");
+    background: theme("colors.white");
   }
 </style>

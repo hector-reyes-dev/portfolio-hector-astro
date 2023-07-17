@@ -1,0 +1,28 @@
+---
+import SectionTitle from "../components/SectionTitle.astro";
+import ResourcesCard from "../components/ResourcesCard.astro";
+
+const allResources = await Astro.glob("../content/resources/*.md");
+---
+
+<section class="w-full p-4 mb-8">
+  <SectionTitle
+    headline="Mi aporte a"
+    colorHeadline="la comunidad"
+    subtitle="recursos"
+  />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      allResources.map(({ frontmatter }) => (
+        <ResourcesCard
+          image={frontmatter?.image}
+          status={frontmatter?.status}
+          title={frontmatter?.title}
+          href={frontmatter?.href}
+          anchorLabel={frontmatter?.anchorLabel}
+          chipLabel={frontmatter?.chipLabel}
+        />
+      ))
+    }
+  </div>
+</section>

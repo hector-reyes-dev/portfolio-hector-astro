@@ -1,0 +1,26 @@
+---
+import ServiceCard from "../components/ServiceCard.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+
+const allServices = await Astro.glob("../content/services/*.md");
+---
+
+<section class="w-full p-4 mb-8">
+  <SectionTitle
+    headline="Así puedo aportar a"
+    colorHeadline="tus proyectos"
+    subtitle="servicios"
+  />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      allServices.map(({ frontmatter }) => (
+        <ServiceCard
+          icon={frontmatter?.icon}
+          title={frontmatter?.title}
+          description={frontmatter?.description}
+          subServices={frontmatter?.subServices}
+        />
+      ))
+    }
+  </div>
+</section>

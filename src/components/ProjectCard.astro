@@ -1,0 +1,31 @@
+---
+import Chip from "./Chip.astro";
+
+interface Props {
+  // image: string;
+  // title: string;
+  // description: string;
+  // href: string;
+  // icons: [];
+  status: "new" | "building" | "featured";
+}
+
+const { status } = Astro.props;
+---
+
+<article class="w-full cursor-pointer mb-6">
+  <figure class="relative mb-2">
+    <span class="absolute m-2 top-3 left-1">
+      <Chip status={status} />
+    </span>
+    <img src="/assets/image.png" alt="" class="object-cover rounded-lg" />
+  </figure>
+  <div class="flex-col justify-start text-black">
+    <h3 class="text-xl lg:text-2xl font-bold line-clamp-1">
+      Acabados Integrales
+    </h3>
+    <p class="text-base line-clamp-2">
+      Mobile application of kitchen recipes and household appliances.
+    </p>
+  </div>
+</article>

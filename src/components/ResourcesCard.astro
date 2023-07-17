@@ -1,0 +1,16 @@
+---
+import Chip from "./Chip.astro";
+
+const { image, status, title, href, anchorLabel, chipLabel } = Astro.props;
+---
+
+<article class="rounded-lg bg-light-gray max-w-xs overflow-hidden">
+  <figure>
+    <img src={`/assets/resources/${image}.png`} alt={title} />
+  </figure>
+  <div class="p-4">
+    <Chip status={status} label={chipLabel} />
+    <h4 class="my-2 text-2xl font-bold line-clamp-2">{title}</h4>
+    <a href={href} class="text-gray">{anchorLabel} {">"}</a>
+  </div>
+</article>

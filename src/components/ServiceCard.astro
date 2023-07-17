@@ -1,0 +1,19 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+  subServices: string[];
+}
+
+const { icon, title, description, subServices } = Astro.props;
+---
+
+<article class="w-full sm:w-80 flex flex-col gap-4 sm:px-4 my-4">
+  <img width="64px" src={`/assets/services/${icon}.svg`} alt={title} />
+  <h3 class="text-black text-xl font-bold">{title}</h3>
+  <p class="text-base">{description}</p>
+  <ul class="pl-8 list-disc text-base">
+    {subServices.map((service) => <li>{service}</li>)}
+  </ul>
+</article>
