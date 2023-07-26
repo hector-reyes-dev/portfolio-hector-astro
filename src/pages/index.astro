@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../sections/Header.astro";
 import Hero from "../sections/Hero.astro";
 import Projects from "../sections/Projects.astro";
 import Services from "../sections/Services.astro";
@@ -10,9 +11,10 @@ import Footer from "../sections/Footer.astro";
 ---
 
 <Layout title="Héctor Reyes - Creemos algo juntos 🚀">
-  <main>
+  <Header />
+  <main class="m-auto px-2 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
     <Hero />
-    <Projects />
+    <Projects id="proyectos" />
     <Services />
     <Phrase />
     <Resources />

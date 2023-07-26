@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon";
+
+const menuItems = [
+  { title: "Proyectos", to: "#proyectos" },
+  { title: "Servicios", to: "#servicios" },
+  { title: "Recursos", to: "#recursos" },
+  { title: "Contacto", to: "#contacto" },
+  { title: "CV", to: "#cv" },
+];
+---
+
+<header class="w-full mb-10 fixed z-50">
+  <div
+    class="mx-auto md:w-full xl:w-7/12 pt-6 pb-4 px-8 flex flex-col lg:flex-row justify-between items-center rounded-b-md backdrop-blur-lg bg-white bg-opacity-40"
+  >
+    <h2 class="font-bold text-base md:text-xl mb-2 md:mb-0">
+      Creemos algo <span class="text-red">juntos</span>
+    </h2>
+    <nav>
+      <ul class="gap-6 hidden md:flex">
+        {
+          menuItems.map(({ title, to }) => (
+            <li class="uppercase tracking-widest text-[13px]">
+              <a href={to}>{title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="flex gap-6 md:gap-4">
+      <Icon name="ep:menu" class="text-black w-8 block md:hidden" />
+      <Icon name="ri:twitter-fill" class="text-black w-8" />
+      <Icon name="radix-icons:notion-logo" class="text-black w-8" />
+      <Icon name="ri:github-fill" class="text-black w-8" />
+    </div>
+  </div>
+</header>
