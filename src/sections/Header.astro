@@ -3,7 +3,7 @@ import { Icon } from "astro-icon";
 
 const menuItems = [
   { title: "Proyectos", to: "#proyectos" },
-  { title: "Servicios", to: "#servicios" },
+  { title: "Servicios", to: "/services" },
   { title: "Recursos", to: "#recursos" },
   { title: "Contacto", to: "#contacto" },
   { title: "CV", to: "#cv" },
@@ -15,7 +15,9 @@ const menuItems = [
     class="mx-auto md:w-full xl:w-7/12 pt-6 pb-4 px-8 flex flex-col lg:flex-row justify-between items-center rounded-b-md backdrop-blur-lg bg-white bg-opacity-40"
   >
     <h2 class="font-bold text-base md:text-xl mb-2 md:mb-0">
-      Creemos algo <span class="text-red">juntos</span>
+      <a href="/">
+        Creemos algo <span class="text-red">juntos</span>
+      </a>
     </h2>
     <nav>
       <ul class="gap-6 hidden md:flex">

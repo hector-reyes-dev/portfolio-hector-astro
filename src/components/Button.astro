@@ -2,20 +2,24 @@
 export interface Props {
   type: "primary" | "secondary";
   text: string;
+  link?: string;
+  target?: string;
 }
 
-const { type, text } = Astro.props;
+const { type, text, link, target = "_self" } = Astro.props;
 ---
 
-<button
-  class={` px-10 py-3 rounded-[24px] text-xl font-semibold transition-all duration-200
-    ${type} 
-  `}
->
-  {text}
-</button>
+<a href={link} target={target}>
+  <button class={`btn ${type}`}>
+    {text}
+  </button>
+</a>
 
 <style>
+  .btn {
+    @apply px-10 py-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
+  }
+
   .primary {
     color: theme("colors.white");
     background: var(--main-gradient);

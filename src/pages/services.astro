@@ -1,23 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header.astro";
-import Hero from "../sections/Hero.astro";
-import Projects from "../sections/Projects.astro";
 import ServicesSection from "../sections/ServicesSection.astro";
-import Phrase from "../components/Phrase.astro";
-import Resources from "../sections/Resources.astro";
 import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
+import Phrase from "../components/Phrase.astro";
 ---
 
 <Layout title="Héctor Reyes - Creemos algo juntos 🚀">
   <Header />
-  <main class="m-auto px-2 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
-    <Hero />
-    <Projects id="proyectos" />
+  <main class="m-auto px-2 pt-32 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
     <ServicesSection />
     <Phrase />
-    <Resources />
     <Contact />
     <Footer />
   </main>
