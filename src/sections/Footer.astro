@@ -1,6 +1,12 @@
 ---
 import LogoIcon from "../components/Icons/LogoIcon.astro";
 import { Icon } from "astro-icon";
+
+const socialMedia = [
+  { icon: "mdi:github", href: "https://github.com/users/hector-reyes-dev" },
+  { icon: "iconoir:figma", href: "https://www.figma.com/@hectordex" },
+  { icon: "uil:behance", href: "https://www.behance.net/hector-reyes" },
+];
 ---
 
 <footer
@@ -14,8 +20,12 @@ import { Icon } from "astro-icon";
     </div>
   </div>
   <div class="flex gap-4">
-    <Icon name="mdi:instagram" class="text-white w-8" />
-    <Icon name="iconoir:figma" class="text-white w-8" />
-    <Icon name="uil:behance" class="text-white w-8" />
+    {
+      socialMedia.map(({ icon, href }) => (
+        <a href={href}>
+          <Icon name={icon} class="text-white w-8" />
+        </a>
+      ))
+    }
   </div>
 </footer>
