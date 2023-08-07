@@ -1,26 +1,26 @@
 ---
 export interface Props {
-  type: "primary" | "secondary";
-  text: string;
-  link?: string;
+  type: "primary" | "secondary" | "icon";
+  href?: string;
   target?: string;
 }
 
-const { type, text, link, target = "_self" } = Astro.props;
+const { type, href, target = "_self" } = Astro.props;
 ---
 
-<a href={link} target={target}>
+<a href={href} target={target}>
   <button class={`btn ${type}`}>
-    {text}
+    <slot />
   </button>
 </a>
 
 <style>
   .btn {
-    @apply px-10 py-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
+    @apply p-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
   }
 
   .primary {
+    padding-inline: 2.5rem;
     color: theme("colors.white");
     background: var(--main-gradient);
     box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
@@ -32,6 +32,7 @@ const { type, text, link, target = "_self" } = Astro.props;
   }
 
   .secondary {
+    padding-inline: 2.5rem;
     color: theme("colors.black");
     background-color: theme("colors.white");
     border: 1px solid theme("colors.red");
@@ -41,5 +42,14 @@ const { type, text, link, target = "_self" } = Astro.props;
     color: theme("colors.white");
     background-color: theme("colors.red-light");
     border: 1px solid theme("colors.red-light");
+  }
+
+  .icon {
+    background: var(--main-gradient);
+    box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
+  }
+
+  .icon:hover {
+    box-shadow: 0px 2px 10px rgba(255, 8, 68, 0.5);
   }
 </style>
