@@ -1,55 +1,70 @@
-# Astro Starter Kit: Basics
+# Héctor Reyes Creative Developer Portfolio
+Deploy: [Héctor Creative Dev](https://hectorcreative.dev/)
+
+![Cover Design](https://github.com/hector-reyes-dev/portfolio-hector-astro/assets/63076719/e1f1d2fc-79ed-4029-b3d0-6c73b52b6256)
+
+Personal Portfolio built with Astro and Tailwind. Hello! I'm a Front-End Developer with experience in UI/UX design and web development. I use tools like Figma, SASS, Angular, React, and more. I'm passionate about quality, creativity, and accessibility. I'm ready to bring value to exceptional projects. Let's make it happen together!
+
+
+## Clone Project 🚀
+
+These instructions will allow you to obtain a working copy of the project on your local machine for educational purposes.
+
+
+### Requirements 📋
+
+- [ ] Node
+- [ ] NPM
+
+
+### Installation 🔧
+
+Install the project via Git Clone or by downloading the Zip file.
+
+Once installed, don't forget to execute:
 
 ```
-npm create astro@latest -- --template basics
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Deploy 📦
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
-
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+Run the project with:
 
 ```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+npm run dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Built with 🛠️
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+* [Figma](https://www.figma.com/) - Herramienta de Diseño y Prototipado
+* [Astro]([https://es.reactjs.org/](https://astro.build/)) - Framework Javascript
+* [Tailwind](https://tailwindcss.com/) - Styles
 
-Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## Branding and User Interface 🎨
 
-All commands are run from the root of the project, from a terminal:
+- [Figma Design](https://www.figma.com/file/lrFeVCv96C4fXSyxgOUVv2/HR-Portfolio---Projects-Template?type=design&node-id=0%3A1&mode=design&t=zEIY2iUSLnEQPWAJ-1) - UI Design WIP 🛠
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Author ✒️
+- **Héctor Reyes** - _Design and Development_ - [HéctorDevx](https://github.com/hector-reyes-dev)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Licence 📄
+
+This project is licensed under the (MIT) License.
+
+
+## Thank you for your attention 🎁
+
+- Tell others about this project 📢
+- Invite me a taquito 🌮 or don't forget to leave a star ⭐.
+- Taquito: [Buy a Taco](https://www.paypal.me/HReyes117)
+
+🐱‍🚀
+
+---
+
+⌨️ with 💚 by [HéctorDevx](https://github.com/hector-reyes-dev) 😊
