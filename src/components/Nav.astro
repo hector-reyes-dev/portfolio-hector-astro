@@ -1,0 +1,20 @@
+---
+const menuItems = [
+  { title: "Proyectos", to: "#proyectos" },
+  { title: "Servicios", to: "#servicios" },
+  { title: "Recursos", to: "#recursos" },
+  { title: "Contacto", to: "#contacto" },
+];
+---
+
+<nav>
+  <ul class="gap-6 hidden md:flex">
+    {
+      menuItems.map(({ title, to }) => (
+        <li class="uppercase tracking-widest text-[13px]">
+          <a href={to}>{title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

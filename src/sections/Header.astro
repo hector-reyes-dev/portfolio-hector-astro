@@ -1,13 +1,6 @@
 ---
-import { Icon } from "astro-icon";
-
-const menuItems = [
-  { title: "Proyectos", to: "#proyectos" },
-  { title: "Servicios", to: "/services" },
-  { title: "Recursos", to: "#recursos" },
-  { title: "Contacto", to: "#contacto" },
-  { title: "CV", to: "#cv" },
-];
+import SocialMediaIcons from "../components/SocialMediaIcons.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <header class="w-full mb-10 fixed z-50">
@@ -19,22 +12,8 @@ const menuItems = [
         Creemos algo <span class="text-red">juntos</span>
       </a>
     </h2>
-    <nav>
-      <ul class="gap-6 hidden md:flex">
-        {
-          menuItems.map(({ title, to }) => (
-            <li class="uppercase tracking-widest text-[13px]">
-              <a href={to}>{title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-    <div class="flex gap-6 md:gap-4">
-      <Icon name="ep:menu" class="text-black w-8 block md:hidden" />
-      <Icon name="ri:twitter-fill" class="text-black w-8" />
-      <Icon name="radix-icons:notion-logo" class="text-black w-8" />
-      <Icon name="ri:github-fill" class="text-black w-8" />
-    </div>
+
+    <Nav />
+    <SocialMediaIcons />
   </div>
 </header>

@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon";
+
+const socialMedia = [
+  { icon: "ri:twitter-fill", href: "https://twitter.com/hector_reyes_" },
+  { icon: "ri:github-fill", href: "https://github.com/users/hector-reyes-dev" },
+  { icon: "uil:behance", href: "https://www.behance.net/hector-reyes" },
+  { icon: "uil:telegram", href: "https://t.me/hectordevx" },
+];
+---
+
+<div class="flex gap-6 md:gap-4">
+  <!-- <Icon name="ep:menu" class="text-black w-8 block md:hidden" /> -->
+  {
+    socialMedia.map(({ href, icon }) => (
+      <a href={href} target="_blank">
+        <Icon name={icon} class="text-black w-8" />
+      </a>
+    ))
+  }
+</div>
