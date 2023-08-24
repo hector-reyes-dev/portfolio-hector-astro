@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon";
 import Chip from "./Chip.astro";
 
 const { image, status, title, href, anchorLabel, chipLabel } = Astro.props;
@@ -10,7 +11,16 @@ const { image, status, title, href, anchorLabel, chipLabel } = Astro.props;
   </figure>
   <div class="p-4">
     <Chip status={status} label={chipLabel} />
-    <h4 class="my-2 text-2xl font-bold line-clamp-2">{title}</h4>
-    <a href={href} class="text-gray">{anchorLabel} {">"}</a>
+    <h4 class="my-3 text-2xl font-bold line-clamp-2">{title}</h4>
+    {
+      href === "#" ? (
+        <p class="text-gray">{anchorLabel}</p>
+      ) : (
+        <a href={href} class="text-red flex hover:underline">
+          <Icon name="ci:link" class="w-5 mr-1" />
+          <span class="text-red">{anchorLabel}</span>
+        </a>
+      )
+    }
   </div>
 </article>
