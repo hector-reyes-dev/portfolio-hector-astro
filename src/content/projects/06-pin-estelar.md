@@ -9,6 +9,6 @@ icons:
     "simple-icons:adobeillustrator",
     "mdi:instagram",
   ]
-status: "building"
+status: "featured"
 size: "big"
 ---

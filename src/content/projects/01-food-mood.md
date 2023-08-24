@@ -11,6 +11,6 @@ icons:
     "iconoir:figma",
     "radix-icons:notion-logo",
   ]
-status: "building"
+status: "new"
 size: "big"
 ---
