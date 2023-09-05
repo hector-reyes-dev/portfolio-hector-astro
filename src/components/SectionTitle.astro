@@ -1,5 +1,12 @@
 ---
-const { headline, colorHeadline, subtitle } = Astro.props;
+export interface Props {
+  headline: string;
+  colorHeadline: string;
+  subtitle: string;
+  color?: "red-light" | "purple";
+}
+
+const { headline, colorHeadline, subtitle, color = "red-light" } = Astro.props;
 ---
 
 <div class="w-full flex flex-col items-start sm:items-center mb-4">
@@ -7,7 +14,7 @@ const { headline, colorHeadline, subtitle } = Astro.props;
   <h2
     class="mb-2 text-3xl md:text-4xl text-black font-bold text-left sm:text-center"
   >
-    {headline}<span class="text-red-light"> {colorHeadline}</span>
+    {headline}<span class={`text-${color}`}> {colorHeadline}</span>
   </h2>
   <!-- <a href="/services" class="text-md text-red">Todos mis servicios {">"}</a> -->
 </div>

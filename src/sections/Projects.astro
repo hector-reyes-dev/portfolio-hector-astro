@@ -3,6 +3,8 @@ import ProjectCard from "../components/ProjectCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 
 const allProjects = await Astro.glob("../content/projects/*.md");
+
+const { color = "red-light" } = Astro.props;
 ---
 
 <section id="proyectos" class="w-full p-4 mb-8">
@@ -10,6 +12,7 @@ const allProjects = await Astro.glob("../content/projects/*.md");
     headline="Lo mejor de"
     colorHeadline="mi trabajo"
     subtitle="proyectos"
+    color={color}
   />
   <div class="flex flex-wrap items-start">
     {
