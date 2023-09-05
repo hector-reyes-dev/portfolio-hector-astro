@@ -1,15 +1,16 @@
 ---
 export interface Props {
-  type: "primary" | "secondary" | "icon";
+  type: "text" | "icon";
   href?: string;
   target?: string;
+  style?: "main" | "purple" | "main-border" | "purple-border";
 }
 
-const { type, href, target = "_self" } = Astro.props;
+const { type, href, target = "_self", style = "main" } = Astro.props;
 ---
 
 <a href={href} target={target}>
-  <button class={`btn ${type}`}>
+  <button class={`btn ${style} ${type}`}>
     <slot />
   </button>
 </a>
@@ -19,37 +20,43 @@ const { type, href, target = "_self" } = Astro.props;
     @apply p-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
   }
 
-  .primary {
-    padding-inline: 2.5rem;
+  .main {
     color: theme("colors.white");
     background: var(--main-gradient);
     box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
   }
 
-  .primary:hover {
+  .main-border {
     color: theme("colors.black");
-    box-shadow: 0px 2px 10px rgba(255, 8, 68, 0.5);
-  }
-
-  .secondary {
-    padding-inline: 2.5rem;
-    color: theme("colors.black");
-    background-color: theme("colors.white");
+    background: theme("colors.white");
     border: 1px solid theme("colors.red");
-  }
-
-  .secondary:hover {
-    color: theme("colors.white");
-    background-color: theme("colors.red-light");
-    border: 1px solid theme("colors.red-light");
-  }
-
-  .icon {
-    background: var(--main-gradient);
     box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
   }
 
-  .icon:hover {
-    box-shadow: 0px 2px 10px rgba(255, 8, 68, 0.5);
+  .main:hover,
+  .main-border:hover {
+    box-shadow: 0px 2px 5px rgba(255, 8, 68, 0.5);
+  }
+
+  .purple {
+    color: theme("colors.white");
+    background: var(--purple-gradient);
+    box-shadow: 0px 4px 20px rgba(107, 66, 223, 0.5);
+  }
+
+  .purple-border {
+    color: theme("colors.black");
+    background: theme("colors.white");
+    border: 1px solid theme("colors.purple");
+    box-shadow: 0px 4px 20px rgba(107, 66, 223, 0.5);
+  }
+
+  .purple:hover,
+  .purple-border:hover {
+    box-shadow: 0px 2px 5px rgba(107, 66, 223, 0.5);
+  }
+
+  .text {
+    padding-inline: 2.5rem;
   }
 </style>
