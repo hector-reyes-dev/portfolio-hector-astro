@@ -1,13 +1,26 @@
 ---
 import Button from "../components/Button.astro";
+
+export interface Props {
+  color?: "main" | "purple";
+}
+
+const { color = "main" } = Astro.props;
 ---
 
 <div class="w-full py-4 sm:py-8 mb-10 flex flex-col items-center">
-  <span class="phrase text-lg sm:text-3xl">Todo lo que necesitas para</span>
-  <span class="phrase font-extrabold text-lg sm:text-3xl mb-4"
+  <span class={`phrase ${color} text-lg sm:text-3xl`}
+    >Todo lo que necesitas para</span
+  >
+  <span class={`phrase ${color} font-extrabold text-lg sm:text-3xl mb-8`}
     >un sitio web de excelencia</span
   >
-  <Button type="text" href="https://t.me/hectordevx" target="_blank">
+  <Button
+    type="text"
+    style={color}
+    href="https://t.me/hectordevx"
+    target="_blank"
+  >
     ¡Contáctame!
   </Button>
 </div>
@@ -17,10 +30,23 @@ import Button from "../components/Button.astro";
     text-align: center;
     font-size: 32px;
     text-transform: uppercase;
+  }
+
+  .main {
     background: -webkit-linear-gradient(
       45deg,
       theme("colors.red"),
       theme("colors.orange-light")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .purple {
+    background: -webkit-linear-gradient(
+      45deg,
+      theme("colors.purple"),
+      theme("colors.purple-light")
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
