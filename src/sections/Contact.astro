@@ -4,7 +4,7 @@ import { Icon } from "astro-icon";
 import Button from "../components/Button.astro";
 
 export interface Props {
-  color?: "main" | "purple";
+  color?: "red-light" | "main" | "purple" | "main-border" | "purple-border";
 }
 
 const socialMedia = [
@@ -14,7 +14,7 @@ const socialMedia = [
   { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/hectorreyesdev/" },
 ];
 
-const { color = "main" } = Astro.props;
+const { color = "red-light" } = Astro.props;
 ---
 
 <section id="contacto" class="w-full p-4 mb-16">
@@ -22,7 +22,7 @@ const { color = "main" } = Astro.props;
     headline="Encuentrame"
     colorHeadline="aquí"
     subtitle="contacto"
-    color="purple"
+    color={color}
   />
   <div class="w-full flex gap-8 items-center justify-center">
     {

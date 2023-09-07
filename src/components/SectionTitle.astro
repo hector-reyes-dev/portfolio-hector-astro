@@ -3,7 +3,7 @@ export interface Props {
   headline: string;
   colorHeadline: string;
   subtitle: string;
-  color?: "red-light" | "purple";
+  color?: "red-light" | "main" | "purple" | "main-border" | "purple-border";
 }
 
 const { headline, colorHeadline, subtitle, color = "red-light" } = Astro.props;

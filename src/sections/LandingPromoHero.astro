@@ -1,0 +1,45 @@
+---
+import { Icon } from "astro-icon";
+import Button from "../components/Button.astro";
+
+const icons = [
+  "iconoir:figma",
+  "simple-icons:webflow",
+  "simple-icons:astro",
+  "mdi:tailwind",
+  "file-icons:vite",
+  "simple-icons:strapi",
+];
+---
+
+<section
+  class="w-full md:w-2/3 pt-40 mb-8 px-4 md:m-auto flex flex-col items-center gap-4"
+>
+  <h1 class="font-bold text-2xl md:text-4xl text-purple text-center">
+    Tu Sitio Web de Alto Rendimiento:
+    <span class="block font-normal text-purple"
+      >Garantía de Excelencia en Performance</span
+    >
+  </h1>
+  <p class="text-center">
+    Utilizando la última tecnología y un enfoque en el diseño único, creamos
+    sitios web que destacan visualmente y brindan una experiencia de usuario
+    excepcional.
+  </p>
+  <div class="my-1 flex gap-4">
+    {icons.map((icon) => <Icon name={icon} class="text-gray w-8" />)}
+  </div>
+  <div class="flex flex-col gap-8 mt-6 md:flex-row items-center">
+    <Button
+      type="text"
+      href="https://t.me/hectordevx"
+      target="_blank"
+      style="purple"
+    >
+      ¡Contáctame!
+    </Button>
+    <Button type="text" style="main-border" href="#servicios" style="purple">
+      Ver Proceso
+    </Button>
+  </div>
+</section>

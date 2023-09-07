@@ -2,23 +2,31 @@
 import ServiceCard from "../components/ServiceCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 
-const allServices = await Astro.glob("../content/services/*.md");
+const {
+  services,
+  color = "red",
+  headline,
+  colorHeadline,
+  subtitle = "",
+} = Astro.props;
 ---
 
 <section id="servicios" class="w-full p-4 mb-8">
   <SectionTitle
-    headline="Así puedo aportar a"
-    colorHeadline="tus proyectos"
-    subtitle="servicios"
+    headline={headline}
+    colorHeadline={colorHeadline}
+    subtitle={subtitle}
+    color={color}
   />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      allServices.map(({ frontmatter }) => (
+      services.map(({ frontmatter }) => (
         <ServiceCard
           icon={frontmatter?.icon}
           title={frontmatter?.title}
           description={frontmatter?.description}
           subServices={frontmatter?.subServices}
+          color={color}
         />
       ))
     }

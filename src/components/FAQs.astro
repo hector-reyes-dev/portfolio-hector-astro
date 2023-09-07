@@ -1,0 +1,39 @@
+---
+const { title, color = "purple" } = Astro.props;
+
+const faqs = [
+  {
+    question: "¿Cuánto tiempo lleva crear un sitio web de alto rendimiento?",
+    response:
+      "Nuestro tiempo de entrega varía según la complejidad del proyecto, pero trabajamos diligentemente para entregar resultados en el menor tiempo posible sin comprometer la calidad.",
+  },
+  {
+    question:
+      "¿Qué sucede si el sitio web no alcanza el 90% de score de performance en Google Lighthouse?",
+    response:
+      "Si no alcanzamos la meta del 90%, te ofrecemos una garantía de devolución de dinero o trabajamos en mejoras adicionales hasta alcanzar el rendimiento deseado.",
+  },
+  {
+    question:
+      "¿Ofrecen servicios de mantenimiento después de la creación del sitio web?",
+    response:
+      "Sí, ofrecemos servicios de mantenimiento y soporte continuo para asegurarnos de que tu sitio web se mantenga actualizado y siga ofreciendo un alto rendimiento.",
+  },
+];
+---
+
+<section class="w-full md:w-2/3 px-4 py-8 m-auto">
+  <h2 class="mb-6 text-3xl md:text-4xl font-bold text-left sm:text-center">
+    {title}
+  </h2>
+  <ul>
+    {
+      faqs.map(({ question, response }) => (
+        <li class="list-none mb-6">
+          <span class={`text-${color} block mb-1`}>{question}</span>
+          <span class="text-black text-sm">{response}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

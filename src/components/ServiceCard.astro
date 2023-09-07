@@ -3,10 +3,17 @@ interface Props {
   icon: string;
   title: string;
   description: string;
-  subServices: string[];
+  subServices?: string[];
+  color?: "red" | "purple";
 }
 
-const { icon, title, description, subServices } = Astro.props;
+const {
+  icon,
+  title,
+  description,
+  subServices = [],
+  color = "red",
+} = Astro.props;
 ---
 
 <article class="w-full sm:w-80 flex flex-col gap-4 sm:px-4 my-4">

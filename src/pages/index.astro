@@ -8,6 +8,9 @@ import Phrase from "../components/Phrase.astro";
 import Resources from "../sections/Resources.astro";
 import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
+import LandingPromo from "../sections/LandingPromo.astro";
+
+const services = await Astro.glob("../content/services/main/*.md");
 ---
 
 <Layout
@@ -16,8 +19,14 @@ import Footer from "../sections/Footer.astro";
   <Header />
   <main class="m-auto px-2 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
     <Hero />
-    <Projects id="proyectos" />
-    <ServicesSection />
+    <LandingPromo />
+    <Projects />
+    <ServicesSection
+      services={services}
+      headline="Así puedo aportar a"
+      colorHeadline="tus proyectos"
+      subtitle="servicios"
+    />
     <Phrase />
     <Resources />
     <Contact />
