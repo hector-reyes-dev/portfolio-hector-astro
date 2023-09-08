@@ -5,12 +5,19 @@ import ServicesSection from "../sections/ServicesSection.astro";
 import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
 import Phrase from "../components/Phrase.astro";
+
+const services = await Astro.glob("../content/services/main/*.md");
 ---
 
 <Layout title="Héctor Reyes - Creemos algo juntos 🚀">
   <Header />
   <main class="m-auto px-2 pt-32 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
-    <ServicesSection />
+    <ServicesSection
+      services={services}
+      headline="Así puedo aportar a"
+      colorHeadline="tus proyectos"
+      subtitle="servicios"
+    />
     <Phrase />
     <Contact />
     <Footer />
