@@ -8,10 +8,11 @@ const {
   headline,
   colorHeadline,
   subtitle = "",
+  id = "servicios",
 } = Astro.props;
 ---
 
-<section id="servicios" class="w-full p-4 mb-8">
+<section id={id} class="w-full p-4 mb-8">
   <SectionTitle
     headline={headline}
     colorHeadline={colorHeadline}
@@ -20,7 +21,7 @@ const {
   />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      services.map(({ frontmatter }) => (
+      services.map(({ frontmatter }: any) => (
         <ServiceCard
           icon={frontmatter?.icon}
           title={frontmatter?.title}
