@@ -1,13 +1,15 @@
 ---
+import { Image } from 'astro:assets'
 import Welcome from "../components/Welcome.astro";
 import Button from "../components/Button.astro";
+import heroImage from "../assets/food-mood-mockup-img.png"
 ---
 
 <section class="w-full flex items-center mb-8 pt-20">
-  <img
-    width="320px"
-    height="auto"
-    src="/assets/food-mood-mockup-img.png"
+  <Image
+    width={320}
+    height={654}
+    src={heroImage}
     alt="Proyecto Food Mood. Mock up pantalla de inicio."
     class="hidden md:block"
   />
