@@ -8,10 +8,10 @@ export interface Props {
 }
 
 const socialMedia = [
-  { icon: "uil:telegram", href: "https://t.me/hectordevx" },
-  { icon: "mdi:instagram", href: "https://www.instagram.com/hector___reyes/" },
-  { icon: "mdi:twitter", href: "https://twitter.com/hector_reyes_" },
-  { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/hectorreyesdev/" },
+  { icon: "uil:telegram", href: "https://t.me/hectordevx", name: "Telegram"},
+  { icon: "mdi:instagram", href: "https://www.instagram.com/hector___reyes/", name: "Instagram" },
+  { icon: "mdi:twitter", href: "https://twitter.com/hector_reyes_", name: "Twitter"},
+  { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/hectorreyesdev/", name: "LinkedIn"},
 ];
 
 const { color = "main" } = Astro.props;
@@ -26,8 +26,8 @@ const { color = "main" } = Astro.props;
   />
   <div class="w-full flex gap-8 items-center justify-center">
     {
-      socialMedia.map(({ icon, href }) => (
-        <Button type="icon" style={color} href={href} target="_blank">
+      socialMedia.map(({ icon, href, name }) => (
+        <Button type="icon" name={name} style={color} href={href} target="_blank">
           <Icon name={icon} class="text-white w-8" />
         </Button>
       ))

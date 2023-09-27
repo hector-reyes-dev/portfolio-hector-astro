@@ -1,16 +1,17 @@
 ---
 export interface Props {
   type: "text" | "icon";
+  name: string;
   href?: string;
   target?: string;
   style?: "red-light" | "main" | "purple" | "main-border" | "purple-border";
 }
 
-const { type, href, target = "_self", style = "main" } = Astro.props;
+const { type, href, name, target = "_self", style = "main" } = Astro.props;
 ---
 
 <a href={href} target={target}>
-  <button class={`btn ${style} ${type}`}>
+  <button class={`btn ${style} ${type}`} name={name}>
     <slot />
   </button>
 </a>
