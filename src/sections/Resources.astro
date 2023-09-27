@@ -1,8 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import SectionTitle from "../components/SectionTitle.astro";
 import ResourcesCard from "../components/ResourcesCard.astro";
 
-const allResources = await Astro.glob("../content/resources/*.md");
+const allResources = await getCollection('resources');
 ---
 
 <section id="recursos" class="w-full p-4 mb-8">
@@ -13,14 +14,14 @@ const allResources = await Astro.glob("../content/resources/*.md");
   />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      allResources.map(({ frontmatter }) => (
+      allResources.map(({ data }) => (
         <ResourcesCard
-          image={frontmatter?.image}
-          status={frontmatter?.status}
-          title={frontmatter?.title}
-          href={frontmatter?.href}
-          anchorLabel={frontmatter?.anchorLabel}
-          chipLabel={frontmatter?.chipLabel}
+          cover={data?.cover}
+          status={data?.status}
+          title={data?.title}
+          href={data?.href}
+          anchorLabel={data?.anchorLabel}
+          chipLabel={data?.chipLabel}
         />
       ))
     }

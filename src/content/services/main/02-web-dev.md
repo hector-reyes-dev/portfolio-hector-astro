@@ -1,5 +1,5 @@
 ---
-icon: "icon-web"
+icon: "../../../assets/services/icon-web.svg"
 title: "Desarrollo Nativo y No-Code de Sitios Web"
 description: "Desde la planificación y el diseño hasta la programación, construcción y lanzamiento del sitio web. Incrementa tu presencia online, aumenta tus ventas y haz crecer tu negocio."
 subServices:

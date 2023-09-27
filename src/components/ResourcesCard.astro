@@ -1,13 +1,14 @@
 ---
+import { Image } from "astro:assets"
 import { Icon } from "astro-icon";
 import Chip from "./Chip.astro";
 
-const { image, status, title, href, anchorLabel, chipLabel } = Astro.props;
+const { cover, status, title, href, anchorLabel, chipLabel } = Astro.props;
 ---
 
 <article class="rounded-lg bg-light-gray max-w-xs overflow-hidden">
   <figure>
-    <img src={`/assets/resources/${image}.png`} alt={title} />
+    <Image src={cover} alt={title} />
   </figure>
   <div class="p-4">
     <Chip status={status} label={chipLabel} />

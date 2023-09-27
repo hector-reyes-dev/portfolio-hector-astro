@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Header from "../sections/Header.astro";
 import Hero from "../sections/Hero.astro";
@@ -10,7 +11,9 @@ import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
 import LandingPromo from "../sections/LandingPromo.astro";
 
-const services = await Astro.glob("../content/services/main/*.md");
+const services = await getCollection('services', ({ id }) => {
+  return id.startsWith('main/'); 
+});
 ---
 
 <Layout

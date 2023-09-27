@@ -21,12 +21,12 @@ const {
   />
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {
-      services.map(({ frontmatter }: any) => (
+      services.map(({ data }: any) => (
         <ServiceCard
-          icon={frontmatter?.icon}
-          title={frontmatter?.title}
-          description={frontmatter?.description}
-          subServices={frontmatter?.subServices}
+          icon={data?.icon}
+          title={data?.title}
+          description={data?.description}
+          subServices={data?.subServices}
           color={color}
         />
       ))

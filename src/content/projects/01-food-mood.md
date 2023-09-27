@@ -1,5 +1,5 @@
 ---
-image: "food-mood-project"
+cover: "../../assets/projects/food-mood-project.png"
 title: "Food Mood UI Kit"
 description: "Aplicación móvil de recetas de cocina y electrodomésticos."
 href: "https://www.behance.net/gallery/157838043/FoodMood-App"

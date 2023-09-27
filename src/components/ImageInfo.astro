@@ -1,11 +1,12 @@
 ---
+import {Image} from 'astro:assets'
 const { img, alt, title, description, color = "purple" } = Astro.props;
 ---
 
 <section
   class="w-full md:w-4/5 px-4 py-8 m-auto flex flex-col md:flex-row items-center justify-center"
 >
-  <img src={img} alt={alt} class="w-full md:w-1/2 p-4" />
+  <Image src={img} alt={alt} class="w-full md:w-1/2 p-4" />
   <div>
     <div class="pb-2 text-left">
       <h4 class="pb-4 text-2xl font-bold">{title}</h4>

@@ -1,8 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import ProjectCard from "../components/ProjectCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 
-const allProjects = await Astro.glob("../content/projects/*.md");
+const allProjects = await getCollection('projects');
 
 const { color = "red-light" } = Astro.props;
 ---
@@ -16,15 +17,15 @@ const { color = "red-light" } = Astro.props;
   />
   <div class="flex flex-wrap items-start">
     {
-      allProjects.map(({ frontmatter }) => (
+      allProjects.map(({ data }) => (
         <ProjectCard
-          image={frontmatter.image}
-          title={frontmatter.title}
-          description={frontmatter.description}
-          href={frontmatter.href}
-          icons={frontmatter.icons}
-          status={frontmatter.status}
-          size={frontmatter.size}
+          cover={data.cover}
+          title={data.title}
+          description={data.description}
+          href={data.href}
+          icons={data.icons}
+          status={data.status}
+          size={data.size}
         />
       ))
     }
