@@ -8,10 +8,22 @@ export interface Props {
 }
 
 const socialMedia = [
-  { icon: "uil:telegram", href: "https://t.me/hectordevx", name: "Telegram"},
-  { icon: "mdi:instagram", href: "https://www.instagram.com/hector___reyes/", name: "Instagram" },
-  { icon: "mdi:twitter", href: "https://twitter.com/hector_reyes_", name: "Twitter"},
-  { icon: "mdi:linkedin", href: "https://www.linkedin.com/in/hectorreyesdev/", name: "LinkedIn"},
+  { icon: "uil:telegram", href: "https://t.me/hectordevx", name: "Telegram" },
+  {
+    icon: "mdi:instagram",
+    href: "https://www.instagram.com/hector___reyes/",
+    name: "Instagram",
+  },
+  {
+    icon: "mdi:twitter",
+    href: "https://twitter.com/hector_reyes_",
+    name: "Twitter",
+  },
+  {
+    icon: "mdi:linkedin",
+    href: "https://www.linkedin.com/in/hectorreyesdev/",
+    name: "LinkedIn",
+  },
 ];
 
 const { color = "main" } = Astro.props;
@@ -20,14 +32,20 @@ const { color = "main" } = Astro.props;
 <section id="contacto" class="w-full p-4 mb-16">
   <SectionTitle
     headline="Encuentrame"
-    colorHeadline="aquí"
+    colorHeadline=" aquí"
     subtitle="contacto"
-    color={color}
+    color="red-light"
   />
   <div class="w-full flex gap-8 items-center justify-center">
     {
       socialMedia.map(({ icon, href, name }) => (
-        <Button type="icon" name={name} style={color} href={href} target="_blank">
+        <Button
+          type="icon"
+          name={name}
+          style={color}
+          href={href}
+          target="_blank"
+        >
           <Icon name={icon} class="text-white w-8" />
         </Button>
       ))

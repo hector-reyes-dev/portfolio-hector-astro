@@ -11,8 +11,8 @@ import Contact from "../sections/Contact.astro";
 import Footer from "../sections/Footer.astro";
 import LandingPromo from "../sections/LandingPromo.astro";
 
-const services = await getCollection('services', ({ id }) => {
-  return id.startsWith('main/'); 
+const services = await getCollection("services", ({ id }) => {
+  return id.startsWith("main/");
 });
 ---
 
