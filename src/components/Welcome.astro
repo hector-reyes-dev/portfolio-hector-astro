@@ -1,12 +1,44 @@
 ---
 import LogoIcon from "./Icons/LogoIcon.astro";
+
+const messages = [
+  "✨ ¡Me alegro de verte aquí!",
+  "🚀 ¿Y si trabajamos algo juntos?",
+  "🏆 Estoy listo para crear tu próximo proyecto",
+  "💼 ¿Ya conoces mis servicios?",
+  "🎮 ¡Encontraste un huevo de pascua!",
+  "🧙‍♂️ Aquí hay algo más que solo estilos",
+  "🎉 npm install -g fun",
+  "💎 <h1>Bienvenid@</h1>",
+  "🤔 ¿FullStack? Sí",
+  "💖 Carol's version",
+  "👀 ¡Busca más allá de lo visible!",
+  "🧊 Próximo experto en ThreeJS",
+  "🦄 Aquí un unicornio",
+];
+
+const getRandom = (items: string[]) => {
+  return items[Math.floor(Math.random() * items.length)];
+};
 ---
+
+<script>
+  import gsap from "gsap";
+
+  gsap.fromTo(
+    ".welcome-message",
+    { y: 30, opacity: 0 },
+    { y: 2, opacity: 1, duration: 0.8 }
+  );
+</script>
 
 <div
   class="flex flex-col-reverse sm:flex-row justify-start sm:items-center gap-2"
 >
   <LogoIcon color="black" width={140} />
-  <span class="w-fit bg-white text-dark-gray py-1 px-4 rounded-full text-sm"
-    >✨ ¡Me alegro de verte aquí!</span
+  <span
+    class="welcome-message w-fit bg-white bg-opacity-80 text-dark-gray py-1 px-4 rounded-full text-sm shadow-sm"
   >
+    {getRandom(messages)}
+  </span>
 </div>
