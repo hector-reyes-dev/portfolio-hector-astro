@@ -1,5 +1,5 @@
 ---
-cover: "../../assets/projects/colibri-project.png"
+cover: "../../assets/projects/blog-backend-image.png"
 title: "Backend con NestJS: Blog"
 description: "Desarrollo de Backend con NestJS y Base de Datos con MongoDB para funcionalidad de blog personal"
 href: "#"
