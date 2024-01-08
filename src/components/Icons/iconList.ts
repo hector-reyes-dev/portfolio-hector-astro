@@ -5,6 +5,7 @@ export const iconList = [
   "simple-icons:astro",
   "akar-icons:node-fill",
   "simple-icons:nestjs",
+  "simple-icons:mongodb",
   "akar-icons:javascript-fill",
   "cib:typescript",
   "mdi:tailwind",

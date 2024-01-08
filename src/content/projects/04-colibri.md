@@ -1,10 +1,15 @@
 ---
 cover: "../../assets/projects/colibri-project.png"
-title: "Misión Colibrí"
-description: "Distintivo e Infografía diseñados para la Misión Colibrí. Un proyecto universitario desarrollado por la Universidad Panamericana, la AEM, la NASA y el MIT."
-href: "https://www.behance.net/gallery/84038489/Mision-Colibri"
+title: "Backend con NestJS: Blog"
+description: "Desarrollo de Backend con NestJS y Base de Datos con MongoDB para funcionalidad de blog personal"
+href: "#"
 icons:
-  ["simple-icons:adobephotoshop", "simple-icons:adobeillustrator", "mdi:cart"]
-status: "featured"
+  [
+    "akar-icons:node-fill",
+    "simple-icons:nestjs",
+    "cib:typescript",
+    "simple-icons:mongodb",
+  ]
+status: "building"
 size: "small"
 ---
