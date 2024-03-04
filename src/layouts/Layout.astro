@@ -2,42 +2,45 @@
 import { ViewTransitions } from "astro:transitions";
 import Background from "../components/Background.astro";
 
-export interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
+const title =
+  "Héctor Reyes - Desarrollador FullStack con una extensa trayectoria en el diseño de interfaces";
+const description =
+  "Desarrollador FullStack con una extensa trayectoria en el diseño de interfaces (UI), experiencia de usuario (UX) y desarrollo de productos web. Orientado hacia el aprendizaje constante y la mejora continua, buscando la creación de proyectos que destaquen por su funcionalidad, identidad, creatividad, dedicación, organización, calidad y factor sorpresa. Apasionado por la optimización del rendimiento web y comprometido con el flujo completo de desarrollo.";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
-    <meta
-      name="title"
-      content="Héctor Reyes - Desarrollador Front-End con experiencia en UI design"
-    />
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="¡Hola! Soy Héctor Reyes, un Desarrollador Front-End con experiencia en UI design y diseño de productos digitales.Me apasiona la calidad, la creatividad y la accesibilidad. Estoy listo para aportar valor a proyectos excepcionales. ¡Hagámoslo realidad juntos!"
-    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta
-      property="og:title"
-      content="Héctor Reyes - Desarrollador Front-End con experiencia en UI design"
-    />
-    <meta property="og:type" content="article" />
+
+    <!-- HTML Meta Tags -->
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Facebook Meta Tags -->
     <meta property="og:url" content=" http://hectorcreative.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta
       property="og:image"
       content="https://hectorcreative.dev/og-image.png"
     />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="hectorcreative.dev" />
+    <meta property="twitter:url" content="https://hectorcreative.dev/" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta
-      property="og:description"
-      content="¡Hola! Soy Héctor Reyes, un Desarrollador Front-End con experiencia en UI design y diseño de productos digitales.Me apasiona la calidad, la creatividad y la accesibilidad. Estoy listo para aportar valor a proyectos excepcionales. ¡Hagámoslo realidad juntos!"
+      name="twitter:image"
+      content="https://hectorcreative.dev/og-image.png"
     />
+
     <meta name="author" content="Héctor Reyes" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,54 +48,52 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
     <Background />
     <slot />
+    <style is:global>
+      :root {
+        --main-gradient: linear-gradient(
+          45deg,
+          theme("colors.red"),
+          theme("colors.orange-light")
+        );
+        --red-gradient: linear-gradient(
+          theme("colors.red"),
+          theme("colors.red-light")
+        );
+        --purple-gradient: linear-gradient(
+          theme("colors.purple"),
+          theme("colors.purple-light")
+        );
+        --orange-gradient: linear-gradient(
+          theme("colors.orange"),
+          theme("colors.orange-light")
+        );
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Instrument Sans", sans-serif;
+        background-color: theme("colors.white");
+        box-sizing: border-box;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      span {
+        color: theme("colors.black");
+      }
+    </style>
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --main-gradient: linear-gradient(
-      45deg,
-      theme("colors.red"),
-      theme("colors.orange-light")
-    );
-    --red-gradient: linear-gradient(
-      theme("colors.red"),
-      theme("colors.red-light")
-    );
-    --purple-gradient: linear-gradient(
-      theme("colors.purple"),
-      theme("colors.purple-light")
-    );
-    --orange-gradient: linear-gradient(
-      theme("colors.orange"),
-      theme("colors.orange-light")
-    );
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: "Instrument Sans", sans-serif;
-    background-color: theme("colors.white");
-    box-sizing: border-box;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span {
-    color: theme("colors.black");
-  }
-</style>
