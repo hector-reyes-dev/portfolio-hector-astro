@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import "./styles.css";
 
 const messages = [
   "✨ ¡Me alegro de verte aquí!",
+  "👋 ¡Bienvenid@ a mi portafolio!",
   "🚀 ¿Y si trabajamos algo juntos?",
   "🏆 Estoy listo para crear tu próximo proyecto",
   "💼 ¿Ya conoces mis servicios?",
@@ -12,8 +14,8 @@ const messages = [
   "🤔 ¿FullStack? Sí",
   "💖 Carol's version",
   "👀 ¡Busca más allá de lo visible!",
-  "🧊 Próximo experto en ThreeJS",
-  "🦄 Aquí un unicornio",
+  "🧊 Aprendiz ThreeJS",
+  "🦄 Sigue el camino del unicornio",
 ];
 
 const getRandom = (items: string[]) =>
@@ -21,13 +23,25 @@ const getRandom = (items: string[]) =>
 
 export const RandomMessage = () => {
   const [message, setMessage] = useState("");
+  const [styles, setStyles] = useState({});
+
+  const containerStyles =
+    "typewriter py-1 px-4 bg-white rounded-full shadow-sm text-dark-gray text-sm";
 
   useEffect(() => {
     setMessage(getRandom(messages));
-  }, []);
+    const messageWidth = message.length;
 
-  const styles =
-    "w-fit bg-white bg-opacity-80 text-dark-gray py-1 px-4 rounded-full text-sm shadow-sm";
+    setStyles({
+      display: message.length > 0 ? "block" : "none",
+      maxWidth: `${messageWidth}ch`,
+      animation: `typing 3s steps(${messageWidth}) forwards`,
+    });
+  }, [message]);
 
-  return <span className={message ? styles : "opacity-0"}>{message}</span>;
+  return (
+    <span className={containerStyles}>
+      <span style={styles}>{message ? message : "..."}</span>
+    </span>
+  );
 };

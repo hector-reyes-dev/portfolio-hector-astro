@@ -1,0 +1,16 @@
+.typewriter {
+  transition: all ease-in-out;
+  opacity: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+    max-width: 0ch;
+  }
+  10% {
+    opacity: 100%;
+  }
+}
