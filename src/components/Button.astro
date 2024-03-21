@@ -18,13 +18,19 @@ const { type, href, name, target = "_self", style = "main" } = Astro.props;
 
 <style>
   .btn {
-    @apply p-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
+    @apply flex items-center gap-2 whitespace-pre p-3 rounded-[24px] text-xl font-semibold transition-all duration-200;
   }
 
   .main {
     color: theme("colors.white");
     background: var(--main-gradient);
     box-shadow: 0px 4px 20px rgba(255, 8, 68, 0.5);
+  }
+
+  ,
+  .btn-label {
+    width: 100%;
+    color: theme("colors.white");
   }
 
   .main-border {

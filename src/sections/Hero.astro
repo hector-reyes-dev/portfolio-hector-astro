@@ -1,4 +1,5 @@
 ---
+import Icon from "astro-icon";
 import { Image } from "astro:assets";
 import Welcome from "../components/Welcome.astro";
 import Button from "../components/Button.astro";
@@ -34,14 +35,15 @@ import IconsAnimation from "../components/IconsAnimation.astro";
         >¡Hagámoslo realidad juntos!</strong
       >
     </p>
-    <div class="flex flex-col gap-8 mt-6 md:flex-row">
+    <div class="flex flex-col gap-8 mt-6 md:flex-row md:items-center">
       <Button
         type="text"
         name="Contáctame"
-        href="https://t.me/hectordevx"
+        href="https://wa.me/525575232654?text=Hola.%20Estoy%20interesado%20en%20trabajar%20contigo%20esta%20es%20mi%20idea:"
         target="_blank"
       >
-        ¡Contáctame!
+        <Icon name="ic:baseline-whatsapp" class="text-white min-w-6" />
+        <span class="btn-label">Agendar una reunión</span>
       </Button>
       <Button
         type="text"
@@ -49,7 +51,7 @@ import IconsAnimation from "../components/IconsAnimation.astro";
         style="main-border"
         href="/services"
       >
-        Ver Servicios
+        <span> Ver Servicios </span>
       </Button>
     </div>
   </div>
