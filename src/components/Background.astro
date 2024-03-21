@@ -1,7 +1,7 @@
 <div class="background-figure">
-  <div class="circle bg-red"></div>
-  <div class="circle bg-purple"></div>
-  <div class="circle bg-orange"></div>
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
 </div>
 
 <style>
@@ -11,16 +11,44 @@
     position: absolute;
     top: -30vw;
     z-index: -1;
-    filter: blur(150px);
-    opacity: 0.4;
+    filter: blur(100px);
     overflow: hidden;
+    max-width: 100%;
   }
 
   .circle {
     position: relative;
     margin-right: -10vw;
-    width: 40vw;
-    height: 40vw;
     border-radius: 100%;
+    animation: circles 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes circles {
+    0% {
+      right: 0%;
+      opacity: 0.4;
+      width: 40vw;
+      height: 40vw;
+    }
+    100% {
+      right: 10%;
+      opacity: 0.6;
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+
+  .circle-1 {
+    background-color: theme("colors.red");
+    margin-top: 20px;
+  }
+
+  .circle-2 {
+    background-color: theme("colors.purple");
+  }
+
+  .circle-3 {
+    margin-top: 40px;
+    background-color: theme("colors.orange");
   }
 </style>
