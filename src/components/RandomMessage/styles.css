@@ -1,5 +1,6 @@
 .typewriter {
-  transition: all ease-in-out;
+  transition-property: opacity, max-width;
+  transition-timing-function: ease-in-out;
   opacity: 100%;
   overflow: hidden;
   white-space: nowrap;

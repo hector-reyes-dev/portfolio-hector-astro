@@ -1,24 +1,18 @@
 ---
 import Icon from "astro-icon";
-import { Image } from "astro:assets";
 import Welcome from "../components/Welcome.astro";
 import Button from "../components/Button.astro";
-import heroImage from "../assets/food-mood-mockup-img.png";
 import IconsAnimation from "../components/IconsAnimation.astro";
+import HeroImages from "../components/HeroImages.astro";
 ---
 
-<section class="w-full flex items-center mb-8 pt-28">
-  <div class="w-1/3 hidden md:block">
-    <Image
-      width={320}
-      height={654}
-      src={heroImage}
-      alt="Proyecto Food Mood. Mock up pantalla de inicio."
-      loading="eager"
-      class="mx-auto"
-    />
+<section
+  class="w-full flex flex-col-reverse md:flex-row items-center justify-start mb-8 pt-28"
+>
+  <div class="w-full md:w-1/2">
+    <HeroImages />
   </div>
-  <div class="w-full md:w-2/3 flex flex-col gap-4 p-4 md:p-6">
+  <div class="w-full md:w-1/2 flex flex-col gap-4 p-4 md:p-6">
     <Welcome />
     <h1 class="text-red-light text-2xl md:text-3xl text-balance">
       ¡Hola! Soy <strong>Héctor Reyes,</strong> un <strong
@@ -35,7 +29,7 @@ import IconsAnimation from "../components/IconsAnimation.astro";
         >¡Hagámoslo realidad juntos!</strong
       >
     </p>
-    <div class="flex flex-col gap-8 mt-6 md:flex-row md:items-center">
+    <div class="mt-6">
       <Button
         type="text"
         name="Contáctame"
@@ -44,14 +38,6 @@ import IconsAnimation from "../components/IconsAnimation.astro";
       >
         <Icon name="ic:baseline-whatsapp" class="text-white min-w-6" />
         <span class="btn-label">Agendar una reunión</span>
-      </Button>
-      <Button
-        type="text"
-        name="Ver servicios"
-        style="main-border"
-        href="/services"
-      >
-        <span> Ver Servicios </span>
       </Button>
     </div>
   </div>
