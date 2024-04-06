@@ -9,7 +9,7 @@ const projectsCollection = defineCollection({
       description: z.string(),
       href: z.string(),
       icons: z.array(z.string()),
-      status: z.enum(["new", "building", "featured"]),
+      categories: z.any(),
       size: z.enum(["big", "small"]).optional(),
     }),
 });
@@ -19,11 +19,10 @@ const resourcesCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       cover: image(),
-      status: z.string(),
       title: z.string(),
       href: z.string(),
       anchorLabel: z.string(),
-      chipLabel: z.string(),
+      label: z.string(),
     }),
 });
 

@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import SectionTitle from "../components/SectionTitle.astro";
 import ResourcesCard from "../components/ResourcesCard.astro";
 
-const allResources = await getCollection('resources');
+const allResources = await getCollection("resources");
 ---
 
 <section id="recursos" class="w-full p-4 mb-8">
@@ -17,11 +17,10 @@ const allResources = await getCollection('resources');
       allResources.map(({ data }) => (
         <ResourcesCard
           cover={data?.cover}
-          status={data?.status}
           title={data?.title}
           href={data?.href}
           anchorLabel={data?.anchorLabel}
-          chipLabel={data?.chipLabel}
+          label={data?.label}
         />
       ))
     }

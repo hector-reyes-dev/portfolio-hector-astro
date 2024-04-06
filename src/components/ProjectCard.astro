@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 import Chip from "./Chip.astro";
+import type { Category } from "./Chip.astro";
 
 interface Props {
   cover: any;
@@ -9,7 +10,7 @@ interface Props {
   description: string;
   href: string;
   icons: string[];
-  status: "new" | "building" | "featured";
+  categories: Category[];
   size?: "big" | "small";
 }
 
@@ -19,7 +20,7 @@ const {
   description,
   href,
   icons,
-  status,
+  categories,
   size = "small",
 } = Astro.props;
 
@@ -33,8 +34,8 @@ const imageSize = size === "big" ? 552 : 268;
 >
   <a href={href} target="_blank">
     <figure class="relative mb-2">
-      <span class="absolute m-1 top-1 left-1">
-        <Chip status={status} />
+      <span class="absolute m-1 top-1 left-1 flex gap-1">
+        {categories.map((category: Category) => <Chip category={category} />)}
       </span>
       <Image
         width={imageSize}

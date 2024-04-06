@@ -10,6 +10,6 @@ icons:
     "cib:typescript",
     "simple-icons:mongodb",
   ]
-status: "building"
+categories: ["back-end"]
 size: "small"
 ---

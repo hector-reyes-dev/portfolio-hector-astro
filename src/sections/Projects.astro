@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 
-const allProjects = await getCollection('projects');
+const allProjects = await getCollection("projects");
 
 const { color = "red-light" } = Astro.props;
 ---
@@ -19,13 +19,13 @@ const { color = "red-light" } = Astro.props;
     {
       allProjects.map(({ data }) => (
         <ProjectCard
-          cover={data.cover}
-          title={data.title}
-          description={data.description}
-          href={data.href}
-          icons={data.icons}
-          status={data.status}
-          size={data.size}
+          cover={data?.cover}
+          title={data?.title}
+          description={data?.description}
+          href={data?.href}
+          icons={data?.icons}
+          categories={data?.categories}
+          size={data?.size}
         />
       ))
     }

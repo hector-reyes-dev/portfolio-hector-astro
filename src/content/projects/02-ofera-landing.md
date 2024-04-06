@@ -11,6 +11,6 @@ icons:
     "iconoir:figma",
     "radix-icons:notion-logo",
   ]
-status: "featured"
+categories: ["front-end", "design"]
 size: "small"
 ---

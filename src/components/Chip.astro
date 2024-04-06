@@ -1,49 +1,47 @@
 ---
-export interface Props {
-  status: "new" | "building" | "featured" | "resourceDone" | "resource";
+// prettier-ignore
+export type Category =  "full-stack" | "front-end" | "back-end" | "design" | "chip";
+
+interface Props {
+  category: Category;
   label?: string;
 }
 
-const { status, label } = Astro.props;
+const { category, label } = Astro.props;
 
-const statusList = {
-  new: "Nuevo",
-  building: "En construcción",
-  featured: "Destacado",
-  resourceDone: label,
-  resource: "En construcción",
+const categoriesList = {
+  "full-stack": "Full-Stack",
+  "front-end": "Front-End",
+  "back-end": "Back-End",
+  design: "Diseño",
+  chip: "chplabel",
 };
 
-const text = statusList[status];
+const text = categoriesList[category];
 ---
 
-<span class={`py-1 px-3 rounded-full text-sm ${status}`}>
+<span class={`chip ${category}`}>
   {label ? label : text}
 </span>
 
 <style>
-  .new {
-    color: theme("colors.white");
-    background: var(--red-gradient);
+  .chip {
+    @apply py-1 px-3 rounded-full text-xs backdrop-blur-sm bg-white bg-opacity-85 text-dark-gray shadow-md;
   }
 
-  .building {
-    color: theme("colors.white");
-    background: var(--purple-gradient);
+  .full-stack {
+    border: 1px solid theme("colors.red-light");
   }
 
-  .featured {
-    color: theme("colors.black");
-    background: var(--orange-gradient);
+  .front-end {
+    border: 1px solid theme("colors.blue");
   }
 
-  .resourceDone {
-    color: theme("colors.light-gray");
-    background: theme("colors.dark-gray");
+  .back-end {
+    border: 1px solid theme("colors.purple-light");
   }
 
-  .resource {
-    color: theme("colors.dark-gray");
-    background: theme("colors.white");
+  .design {
+    border: 1px solid theme("colors.orange-light");
   }
 </style>

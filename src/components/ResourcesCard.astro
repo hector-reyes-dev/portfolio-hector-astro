@@ -1,17 +1,17 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
 import Chip from "./Chip.astro";
 
-const { cover, status, title, href, anchorLabel, chipLabel } = Astro.props;
+const { cover, title, href, anchorLabel, label } = Astro.props;
 ---
 
 <article class="rounded-lg bg-light-gray max-w-xs overflow-hidden">
   <figure>
     <Image src={cover} alt={title} />
   </figure>
-  <div class="p-4">
-    <Chip status={status} label={chipLabel} />
+  <div class="mt-[-2rem] px-4 pb-4">
+    <Chip category="chip" label={label} />
     <h4 class="my-3 text-2xl font-bold line-clamp-2">{title}</h4>
     {
       href === "#" ? (
