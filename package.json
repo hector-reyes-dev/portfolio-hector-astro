@@ -10,17 +10,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.0.4",
-    "@astrojs/react": "^3.0.9",
-    "@astrojs/tailwind": "^5.0.0",
+    "@astrojs/partytown": "^2.1.0",
+    "@astrojs/react": "^3.4.0",
+    "@astrojs/tailwind": "^5.1.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
-    "astro": "^3.1.4",
+    "astro": "^4.9.2",
     "astro-icon": "^0.8.1",
     "gsap": "^3.12.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sharp": "^0.33.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
