@@ -2,15 +2,15 @@
 import { getCollection } from "astro:content";
 import Layout from "@common/Layout.astro";
 import Projects from "@home/Projects/Projects.astro";
-import ServicesSection from "../../modules/home/Services/Services.astro";
-import Phrase from "../../modules/common/Phrase.astro";
-import Contact from "../../modules/common/Contact/Contact.astro";
-import ImageInfo from "../../modules/promo/ImageInfo.astro";
-import FAQs from "../../modules/promo/FAQs.astro";
-import InfoCard from "../../modules/promo/InfoCard.astro";
+import ServicesSection from "@home/Services/Services.astro";
+import Phrase from "@common/Phrase.astro";
+import Contact from "@common/Contact/Contact.astro";
+import ImageInfo from "@promo/ImageInfo.astro";
+import FAQs from "@promo/FAQs.astro";
+import InfoCard from "@promo/InfoCard.astro";
 import LandingPromoHero from "./LandingPromoHero.astro";
-import performanceImage01 from "../assets/services/performance-01.png";
-import performanceImage02 from "../assets/services/performance-02.png";
+import performanceImage01 from "@assets/services/performance-01.png";
+import performanceImage02 from "@assets/services/performance-02.png";
 
 const services = await getCollection("services", ({ id }) => {
   return id.startsWith("performance-promo/");

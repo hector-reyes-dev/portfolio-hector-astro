@@ -10,6 +10,7 @@
       "@constants/*": ["src/constants/*"],
       "@common/*": ["src/modules/common/*"],
       "@home/*": ["src/modules/home/*"],
+      "@promo/*": ["src/modules/promo/*"],
       "@utils/*": ["src/utils/*"]
     }
   }

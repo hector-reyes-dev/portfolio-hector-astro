@@ -2,8 +2,8 @@
 import { getImage, Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Button from "@common/Button.astro";
-import bgImage from "../assets/hero-image.png";
-import icon from "../assets/services/icon-book-time.svg";
+import bgImage from "@assets/hero-image.png";
+import icon from "@assets/services/icon-book-time.svg";
 
 const bgOptimized = await getImage({ src: bgImage, format: "webp" });
 
