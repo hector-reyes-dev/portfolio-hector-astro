@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import SectionTitle from "@common/SectionTitle.astro";
+import ResourcesCard from "./ResourcesCard.astro";
+
+const resources = await getCollection("resources");
+---
+
+<section id="recursos" class="w-full p-4 mb-8">
+  <SectionTitle headline="Mi aporte a la comunidad" subtitle="recursos" />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      resources.map(({ data }) => (
+        <ResourcesCard
+          cover={data?.cover}
+          title={data?.title}
+          href={data?.href}
+          anchorLabel={data?.anchorLabel}
+          label={data?.label}
+        />
+      ))
+    }
+  </div>
+</section>

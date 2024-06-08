@@ -1,38 +1,25 @@
 ---
-import { getCollection } from "astro:content";
-import Layout from "../layouts/Layout.astro";
-import Header from "../sections/Header.astro";
-import Hero from "../sections/Hero.astro";
-import Projects from "../sections/Projects.astro";
-import ServicesSection from "../sections/ServicesSection.astro";
-import Phrase from "../components/Phrase.astro";
-import Resources from "../sections/Resources.astro";
-import Contact from "../sections/Contact.astro";
-import Footer from "../sections/Footer.astro";
-import LandingPromo from "../sections/LandingPromo.astro";
+import Layout from "@common/Layout.astro";
+import Phrase from "@common/Phrase.astro";
 
-const services = await getCollection("services", ({ id }) => {
-  return id.startsWith("main/");
-});
+import Hero from "@home/Hero/Hero.astro";
+import Projects from "@home/Projects/Projects.astro";
+import Services from "@home/Services/Services.astro";
+import Resources from "@home/Resources/Resources.astro";
+import Contact from "@common/Contact/Contact.astro";
+
+import { SEO_MAIN } from "@constants/seo";
+
+const { title, description } = SEO_MAIN;
 ---
 
-<Layout
-  title="Héctor Reyes - Desarrollador Front-End con experiencia en UI design"
->
-  <Header />
+<Layout title={title} description={description}>
   <main class="m-auto px-2 md:px-4 2xl:w-4/6 xl:w-5/6 w-full">
     <Hero />
-    <LandingPromo />
     <Projects />
-    <ServicesSection
-      services={services}
-      headline="Así puedo aportar a "
-      colorHeadline="tus proyectos"
-      subtitle="servicios"
-    />
+    <Services />
     <Phrase />
     <Resources />
-    <Contact color="main" />
-    <Footer />
+    <Contact />
   </main>
 </Layout>

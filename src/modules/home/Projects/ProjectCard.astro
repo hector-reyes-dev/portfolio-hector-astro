@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import Chip from "@common/Chip.astro";
+import type { Category } from "@common/Chip.astro";
+
+interface Props {
+  cover: any;
+  title: string;
+  description: string;
+  href: string;
+  icons: string[];
+  categories: Category[];
+  size?: "big" | "small";
+  slug: string;
+}
+
+const {
+  cover,
+  title,
+  description,
+  href,
+  icons,
+  categories,
+  size = "small",
+  slug,
+} = Astro.props;
+
+const imageSize = size === "big" ? 552 : 268;
+---
+
+<article
+  class={`${
+    size === "big" ? "md:w-1/2 hidden md:block" : "md:w-1/4"
+  } mb-6 p-2 w-full`}
+  transition:name={title}
+>
+  <figure class="relative mb-2">
+    <div class="absolute m-1 top-1 left-1 flex gap-1">
+      {categories.map((category: Category) => <Chip category={category} />)}
+    </div>
+    <Image
+      width={imageSize}
+      height={268}
+      class="object-cover rounded-lg"
+      src={cover}
+      alt={title}
+    />
+  </figure>
+  <a href={`/projects/${slug}`}>
+    <div class="flex-col justify-start text-black">
+      <div class="my-1 flex gap-2">
+        {icons.map((icon) => <Icon name={icon} class="text-gray text-lg" />)}
+      </div>
+      <h3 class="text-xl font-bold line-clamp-1">
+        {title}
+      </h3>
+      <p class="text-base line-clamp-2">
+        {description}
+      </p>
+    </div>
+  </a>
+</article>

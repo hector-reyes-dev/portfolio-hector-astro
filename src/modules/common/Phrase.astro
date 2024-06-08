@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "@common/Button.astro";
+---
+
+<div class="w-full py-4 sm:py-8 mb-10 flex flex-col items-center">
+  <span class={`phrase text-main text-lg sm:text-3xl`}
+    >Todo lo que necesitas para</span
+  >
+  <span class={`phrase text-main font-extrabold text-lg sm:text-3xl mb-8`}
+    >un sitio web de excelencia</span
+  >
+  <Button
+    type="text"
+    name="Contáctame"
+    href="https://wa.me/525575232654?text=Hola.%20Estoy%20interesado%20en%20trabajar%20contigo%20esta%20es%20mi%20idea:"
+    target="_blank"
+  >
+    <Icon name="simple-icons:whatsapp" class="text-white min-w-6" />
+    <span class="btn-label">¡Agendar una reunión!</span>
+  </Button>
+</div>
+
+<style>
+  .phrase {
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
+  .main {
+    background: -webkit-linear-gradient(
+      45deg,
+      theme("colors.red"),
+      theme("colors.orange-light")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .purple {
+    background: -webkit-linear-gradient(
+      45deg,
+      theme("colors.purple"),
+      theme("colors.purple-light")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

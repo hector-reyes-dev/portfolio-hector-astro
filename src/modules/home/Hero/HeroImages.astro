@@ -1,0 +1,89 @@
+---
+import { Image } from "astro:assets";
+import foodMoodImg from "@assets/food-mood-mockup.png";
+import comeetCatImg from "@assets/comeet-cat-mockup.png";
+import listsImg from "@assets/lists-mockup.png";
+import watchifyImg from "@assets/watchify-mockup.png";
+
+const images = [
+  { img: foodMoodImg, alt: "Proyecto Food Mood. Mock up pantalla de inicio." },
+  {
+    img: comeetCatImg,
+    alt: "Proyecto Comeet Cat. Mock up pantalla de inicio.",
+  },
+  { img: listsImg, alt: "Proyecto Listas. Mock up pantalla de inicio." },
+  { img: watchifyImg, alt: "Proyecto Watchify. Mock up pantalla de inicio." },
+];
+---
+
+<div
+  class="max-w-full px-1 flex justify-between lg:justify-center xl:justify-between items-center"
+>
+  {
+    images.map(({ img, alt }) => (
+      <Image
+        src={img}
+        alt={alt}
+        loading="eager"
+        class="hero-image mt-8 mr-[-440px] w-[30vw] lg:w-[18vw] xl:w-[12vw] lg:mt-0 lg:mr-[-140px] xl:mr-[-800px]"
+      />
+    ))
+  }
+</div>
+
+<style>
+  .hero-image {
+    z-index: 0;
+    filter: drop-shadow(10px 10px 20px theme("colors.black"));
+    animation: move-out;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    transition-property: z-index, filter;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+  }
+
+  @media screen {
+  }
+
+  .hero-image:hover {
+    z-index: 10;
+    filter: drop-shadow(5px 5px 10px theme("colors.black"));
+    animation: move-in;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in-out;
+  }
+
+  .hero-image:last-child {
+    animation: none;
+    margin-right: 0px;
+  }
+
+  .hero-image:last-child:hover {
+    z-index: 0;
+  }
+
+  @keyframes move-in {
+    0% {
+      transform: translateX(0px);
+    }
+    70% {
+      transform: translateX(-50px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes move-out {
+    0% {
+      transform: translateX(0px);
+    }
+    30% {
+      transform: translateX(-60px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+</style>

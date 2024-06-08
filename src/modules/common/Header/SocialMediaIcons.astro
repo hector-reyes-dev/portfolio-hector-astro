@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+
+const socialMedia = [
+  { icon: "mdi:twitter", href: "https://twitter.com/hector_reyes_" },
+  { icon: "mdi:github", href: "https://github.com/hector-reyes-dev" },
+  {
+    icon: "simple-icons:behance",
+    href: "https://www.behance.net/hector-reyes",
+  },
+  {
+    icon: "simple-icons:whatsapp",
+    href: "https://wa.me/525575232654?text=Hola.%20Estoy%20interesado%20en%20trabajar%20contigo%20esta%20es%20mi%20idea:",
+  },
+];
+---
+
+<div class="flex gap-6 lg:gap-6">
+  {
+    socialMedia.map(({ href, icon }) => (
+      <a href={href} target="_blank">
+        <Icon name={icon} class="text-black text-xl" />
+      </a>
+    ))
+  }
+</div>

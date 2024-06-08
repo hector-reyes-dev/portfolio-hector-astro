@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import SectionTitle from "@common/SectionTitle.astro";
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = await getCollection("projects");
+---
+
+<section id="proyectos" class="w-full p-4 mb-8">
+  <SectionTitle headline="Lo mejor de mi trabajo" subtitle="proyectos" />
+  <div class="flex flex-wrap items-start">
+    {
+      projects.map((project) => {
+        const { cover, title, description, href, icons, categories, size } =
+          project.data;
+
+        return (
+          <ProjectCard
+            cover={cover}
+            title={title}
+            description={description}
+            href={href}
+            icons={icons}
+            categories={categories}
+            size={size}
+            slug={project.slug}
+          />
+        );
+      })
+    }
+  </div>
+</section>

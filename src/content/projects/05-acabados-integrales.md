@@ -6,11 +6,11 @@ href: "https://www.behance.net/gallery/100458373/Acabados-Integrales-Branding-De
 icons:
   [
     "mdi:react",
-    "la:sass",
-    "fe:git",
+    "mdi:sass",
+    "mdi:git",
     "simple-icons:adobeillustrator",
-    "iconoir:figma",
-    "radix-icons:notion-logo",
+    "simple-icons:figma",
+    "simple-icons:notion",
   ]
 categories: ["front-end", "design"]
 size: "small"

@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon/components";
+import LogoIcon from "./LogoIcon.astro";
+
+const socialMedia = [
+  { icon: "mdi:github", href: "https://github.com/hector-reyes-dev" },
+  { icon: "simple-icons:figma", href: "https://www.figma.com/@hectordex" },
+  {
+    icon: "simple-icons:behance",
+    href: "https://www.behance.net/hector-reyes",
+  },
+];
+---
+
+<footer
+  class="max-w-full mx-8 px-4 md:px-20 py-10 flex flex-col-reverse md:flex-row justify-between items-center rounded-t-xl bg-black"
+>
+  <div class="mt-8 md:mt-0 flex flex-col md:flex-row items-center gap-4">
+    <LogoIcon color="white" width={140} />
+    <div class="flex flex-col uppercase items-center md:items-start">
+      <span class="font-2xl font-bold text-white">Front-end Developer</span>
+      <span class="font-2xl font-light text-white">+ UI & UX Designer</span>
+    </div>
+  </div>
+  <div class="flex gap-4">
+    {
+      socialMedia.map(({ icon, href }) => (
+        <a href={href} target="_blank">
+          <Icon name={icon} class="text-white text-2xl" />
+        </a>
+      ))
+    }
+  </div>
+</footer>

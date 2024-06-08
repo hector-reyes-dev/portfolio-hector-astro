@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import hectorReyes from "@assets/hector-reyes.webp";
+import { RandomMessage } from "./RandomMessage/RandomMessage";
+
+const size = 60;
+const title = "Hola, soy Héctor Reyes";
+---
+
+<div
+  class="flex flex-col-reverse items-center sm:flex-row justify-start sm:items-center gap-2"
+>
+  <Image
+    src={hectorReyes}
+    alt={title}
+    title={title}
+    width={size}
+    height={size}
+  />
+  <RandomMessage client:load />
+</div>

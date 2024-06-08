@@ -5,11 +5,11 @@ description: "Challenge de diseño de Landing Page para e commerce. Proyecto rea
 href: "https://www.behance.net/gallery/113702977/Ofera-E-Commerce-Challenge"
 icons:
   [
-    "akar-icons:html-fill",
-    "akar-icons:css-fill",
-    "fe:git",
-    "iconoir:figma",
-    "radix-icons:notion-logo",
+    "mdi:language-html5",
+    "mdi:language-css3",
+    "mdi:git",
+    "simple-icons:figma",
+    "simple-icons:notion",
   ]
 categories: ["front-end", "design"]
 size: "small"

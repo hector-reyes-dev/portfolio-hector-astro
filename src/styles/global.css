@@ -1,0 +1,39 @@
+:root {
+  --main-gradient: linear-gradient(
+    45deg,
+    theme("colors.red"),
+    theme("colors.orange-light")
+  );
+  --red-gradient: linear-gradient(
+    theme("colors.red"),
+    theme("colors.red-light")
+  );
+  --purple-gradient: linear-gradient(
+    theme("colors.purple"),
+    theme("colors.purple-light")
+  );
+  --orange-gradient: linear-gradient(
+    theme("colors.orange"),
+    theme("colors.orange-light")
+  );
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Instrument Sans", sans-serif;
+  background-color: theme("colors.white");
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  color: theme("colors.black");
+}

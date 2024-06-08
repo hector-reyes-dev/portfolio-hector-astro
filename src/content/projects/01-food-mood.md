@@ -7,10 +7,12 @@ icons:
   [
     "mdi:react",
     "mdi:tailwind",
-    "fe:git",
-    "iconoir:figma",
-    "radix-icons:notion-logo",
+    "mdi:git",
+    "simple-icons:figma",
+    "simple-icons:notion",
   ]
 categories: ["front-end", "design"]
 size: "big"
 ---
+
+## Contenido markdown

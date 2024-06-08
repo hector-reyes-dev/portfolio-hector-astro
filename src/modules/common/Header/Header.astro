@@ -1,0 +1,36 @@
+---
+import Nav from "./Nav.astro";
+import SocialMediaIcons from "./SocialMediaIcons.astro";
+import { getLastWord } from "@utils/getLastWord";
+
+const { title } = Astro.props;
+const { text, lastWord } = await getLastWord(title);
+---
+
+<header>
+  <div class="header-container">
+    <h2 class="header-title">
+      <a href="/">
+        {text}
+        <span class="text-red">{lastWord}</span>
+      </a>
+    </h2>
+
+    <Nav />
+    <SocialMediaIcons />
+  </div>
+</header>
+
+<style>
+  header {
+    @apply w-full mb-10 fixed z-50;
+  }
+
+  .header-container {
+    @apply mx-auto lg:w-full xl:w-8/12 pt-6 pb-4 px-8 flex flex-col lg:flex-row gap-1 lg:gap-8 justify-between items-center rounded-b-md backdrop-blur-lg bg-white bg-opacity-30;
+  }
+
+  .header-title {
+    @apply font-bold text-base lg:text-xl mb-2 lg:mb-0;
+  }
+</style>

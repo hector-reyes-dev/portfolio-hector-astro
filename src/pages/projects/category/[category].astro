@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+import { getAllCategories } from "../../../utils/getAllCategories";
+import ProjectCard from "@home/Projects/ProjectCard.astro";
+import ProjectLayout from "../ProjectLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const categories = (await getAllCategories()).map((category) =>
+    category.toLowerCase()
+  );
+
+  return categories.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}) satisfies GetStaticPaths;
+
+const { category } = Astro.props;
+const projects = await getCollection("projects", ({ data }) =>
+  data.categories.map((cat: string) => cat.toLowerCase()).includes(category)
+);
+---
+
+<ProjectLayout>
+  <div class="flex flex-wrap items-start">
+    {
+      projects.map((project) => {
+        const { cover, title, description, href, icons, categories, size } =
+          project.data;
+
+        return (
+          <ProjectCard
+            cover={cover}
+            title={title}
+            description={description}
+            href={href}
+            icons={icons}
+            categories={categories}
+            size={size}
+            slug={project.slug}
+          />
+        );
+      })
+    }
+  </div>
+</ProjectLayout>

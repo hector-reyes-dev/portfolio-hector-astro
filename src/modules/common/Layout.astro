@@ -1,0 +1,24 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+import Head from "./Head.astro";
+import Background from "./Background.astro";
+import Header from "./Header/Header.astro";
+import Footer from "./Footer/Footer.astro";
+
+import "@styles/global.css";
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <Head title={title} description={description} />
+  <ViewTransitions />
+  <body>
+    <Background />
+    <Header title="Creemos algo juntos" />
+    <slot />
+    <Footer />
+  </body>
+</html>

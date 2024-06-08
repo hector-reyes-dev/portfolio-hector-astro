@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import type { GetStaticPaths } from "astro";
+
+import ProjectLayout from "./ProjectLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}) satisfies GetStaticPaths;
+
+const project = Astro.props;
+const { cover, title, description } = project.data;
+const { Content } = await project.render();
+---
+
+<ProjectLayout>
+  <main class="prose" transition:name={title}>
+    <Image src={cover} alt={title} />
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <Content />
+  </main>
+</ProjectLayout>
