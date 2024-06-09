@@ -19,12 +19,17 @@ const socialMedia = [
     href: "https://www.linkedin.com/in/hectorreyesdev/",
     name: "LinkedIn",
   },
+  {
+    icon: "mdi:file-download",
+    href: "https://drive.google.com/file/d/165iYcgf-vW7fIYgcLfBfI8OSzX0B--Ov/view?usp=sharing",
+    name: "Descargar CV",
+  },
 ];
 ---
 
 <section id="contacto" class="w-full p-4 mb-16">
   <SectionTitle headline="Encuentrame aquí" subtitle="contacto" />
-  <div class="w-full flex gap-8 items-center justify-center">
+  <div class="w-full flex flex-wrap gap-8 items-center justify-center md:flex">
     {
       socialMedia.map(({ icon, href, name }) => (
         <Button type="icon" name={name} href={href} target="_blank">

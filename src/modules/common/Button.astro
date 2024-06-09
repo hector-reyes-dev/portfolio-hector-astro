@@ -11,7 +11,7 @@ const { type, href, name, target = "_self", style = "main" } = Astro.props;
 ---
 
 <a href={href} target={target}>
-  <button class={`btn ${style} ${type}`} aria-label={name}>
+  <button class={`btn ${style} ${type}`} aria-label={name} title={name}>
     <slot />
   </button>
 </a>

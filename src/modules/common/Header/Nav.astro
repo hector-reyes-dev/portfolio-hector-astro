@@ -1,18 +1,25 @@
 ---
 const menuItems = [
-  { title: "Proyectos", to: "#proyectos" },
-  { title: "Servicios", to: "#servicios" },
-  { title: "Recursos", to: "#recursos" },
-  { title: "Contacto", to: "#contacto" },
+  { title: "Proyectos", to: "#proyectos", target: "_self" },
+  { title: "Servicios", to: "#servicios", target: "_self" },
+  { title: "Recursos", to: "#recursos", target: "_self" },
+  { title: "Contacto", to: "#contacto", target: "_self" },
+  {
+    title: "CV",
+    to: "https://drive.google.com/file/d/165iYcgf-vW7fIYgcLfBfI8OSzX0B--Ov/view?usp=sharing",
+    target: "_blank",
+  },
 ];
 ---
 
 <nav>
   <ul class="gap-6 hidden lg:flex">
     {
-      menuItems.map(({ title, to }) => (
+      menuItems.map(({ title, to, target }) => (
         <li class="uppercase tracking-widest text-[13px]">
-          <a href={to}>{title}</a>
+          <a href={to} target={target}>
+            {title}
+          </a>
         </li>
       ))
     }
