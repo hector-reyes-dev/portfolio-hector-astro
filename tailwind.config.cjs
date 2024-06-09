@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from "tailwindcss/defaultTheme";
+
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -17,6 +20,9 @@ module.exports = {
         purple: "#6b42df",
         "purple-light": "#987aef",
         blue: "#6bb5f9",
+      },
+      fontFamily: {
+        sans: ["Instrument Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },
