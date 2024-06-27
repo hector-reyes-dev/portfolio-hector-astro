@@ -1,0 +1,12 @@
+---
+import { getAllCategories } from "@utils/getAllCategories";
+import Chip from "./Chip.astro";
+
+const categories = (await getAllCategories()).map((category) =>
+  category.toLowerCase()
+);
+---
+
+<div class="w-full flex gap-4 items-center justify-center my-4">
+  {categories.map((category) => <Chip category={category} />)}
+</div>

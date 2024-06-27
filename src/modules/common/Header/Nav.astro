@@ -1,9 +1,9 @@
 ---
 const menuItems = [
-  { title: "Proyectos", to: "#proyectos", target: "_self" },
-  { title: "Servicios", to: "#servicios", target: "_self" },
-  { title: "Recursos", to: "#recursos", target: "_self" },
-  { title: "Contacto", to: "#contacto", target: "_self" },
+  { title: "Proyectos", to: "/projects", target: "_self" },
+  { title: "Servicios", to: "/#servicios", target: "_self" },
+  { title: "Recursos", to: "/#recursos", target: "_self" },
+  { title: "Contacto", to: "/#contacto", target: "_self" },
   {
     title: "CV",
     to: "https://drive.google.com/file/d/165iYcgf-vW7fIYgcLfBfI8OSzX0B--Ov/view?usp=sharing",
@@ -16,7 +16,7 @@ const menuItems = [
   <ul class="gap-6 hidden lg:flex">
     {
       menuItems.map(({ title, to, target }) => (
-        <li class="uppercase tracking-widest text-[13px]">
+        <li class="uppercase tracking-widest text-[13px] hover:text-main">
           <a href={to} target={target}>
             {title}
           </a>

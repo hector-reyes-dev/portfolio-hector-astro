@@ -9,8 +9,9 @@ module.exports = {
       colors: {
         main: "#ff0844",
         white: "#fbfbfb",
-        "light-gray": "#efefef",
-        gray: "#4f4f56",
+        light: "#efefef",
+        "light-gray": "#a6a6b5",
+        gray: "#878791",
         "dark-gray": "#484753",
         black: "#1e1e29",
         red: "#ff0844",
@@ -22,7 +23,7 @@ module.exports = {
         blue: "#6bb5f9",
       },
       fontFamily: {
-        sans: ["Instrument Sans", ...defaultTheme.fontFamily.sans],
+        sans: ["Eudoxus Sans", ...defaultTheme.fontFamily.sans],
       },
     },
   },

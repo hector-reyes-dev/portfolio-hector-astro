@@ -17,7 +17,7 @@ const images = [
 ---
 
 <div
-  class="max-w-full px-1 flex justify-between lg:justify-center xl:justify-between items-center"
+  class="max-w-full p-0 md:pr-8 flex items-start justify-between lg:justify-center xl:justify-between"
 >
   {
     images.map(({ img, alt }) => (
@@ -25,7 +25,7 @@ const images = [
         src={img}
         alt={alt}
         loading="eager"
-        class="hero-image mt-8 mr-[-440px] w-[30vw] lg:w-[18vw] xl:w-[12vw] lg:mt-0 lg:mr-[-140px] xl:mr-[-800px]"
+        class="hero-image mt-8 mr-[-440px] w-2/6 lg:mr-[-100px] xl:mr-[-800px]"
       />
     ))
   }
@@ -34,7 +34,7 @@ const images = [
 <style>
   .hero-image {
     z-index: 0;
-    filter: drop-shadow(10px 10px 20px theme("colors.black"));
+    filter: drop-shadow(10px 10px 15px #22222269);
     animation: move-out;
     animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
@@ -48,7 +48,7 @@ const images = [
 
   .hero-image:hover {
     z-index: 10;
-    filter: drop-shadow(5px 5px 10px theme("colors.black"));
+    filter: drop-shadow(5px 0px 3px #22222269);
     animation: move-in;
     animation-duration: 0.2s;
     animation-timing-function: ease-in-out;

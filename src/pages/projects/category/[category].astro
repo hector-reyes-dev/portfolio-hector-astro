@@ -2,9 +2,13 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 
-import { getAllCategories } from "../../../utils/getAllCategories";
+import Layout from "@common/Layout.astro";
 import ProjectCard from "@home/Projects/ProjectCard.astro";
-import ProjectLayout from "../ProjectLayout.astro";
+import CategoryChips from "@common/CategoryChips.astro";
+import SectionTitle from "@common/SectionTitle.astro";
+import { getAllCategories } from "@utils/getAllCategories";
+import { getLastWord } from "@utils/getLastWord";
+import { getCategory } from "@utils/getCategory";
 
 export const getStaticPaths = (async () => {
   const categories = (await getAllCategories()).map((category) =>
@@ -18,31 +22,40 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { category } = Astro.props;
+
 const projects = await getCollection("projects", ({ data }) =>
   data.categories.map((cat: string) => cat.toLowerCase()).includes(category)
 );
+
+const categoryText = await getCategory(category);
+const { text, lastWord } = await getLastWord(
+  `Mis proyectos de ${categoryText}`
+);
 ---
 
-<ProjectLayout>
-  <div class="flex flex-wrap items-start">
-    {
-      projects.map((project) => {
-        const { cover, title, description, href, icons, categories, size } =
-          project.data;
+<Layout title={category} description={category} headerTitle="Mis proyectos">
+  <main class="w-full m-auto px-2 xl:w-[1024px] py-28">
+    <SectionTitle subtitle={text} headline={lastWord} />
+    <CategoryChips />
+    <div class="flex flex-wrap items-start">
+      {
+        projects.map((project) => {
+          const { cover, title, description, icons, categories, size } =
+            project.data;
 
-        return (
-          <ProjectCard
-            cover={cover}
-            title={title}
-            description={description}
-            href={href}
-            icons={icons}
-            categories={categories}
-            size={size}
-            slug={project.slug}
-          />
-        );
-      })
-    }
-  </div>
-</ProjectLayout>
+          return (
+            <ProjectCard
+              cover={cover}
+              title={title}
+              description={description}
+              icons={icons}
+              categories={categories}
+              size={size}
+              slug={project.slug}
+            />
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>

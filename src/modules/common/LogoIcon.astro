@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  color: "white" | "black";
+  color: "white" | "black" | "main";
   width: number;
 }
 
@@ -46,5 +46,9 @@ const { color, width } = Astro.props;
 
   .black {
     fill: theme("colors.black");
+  }
+
+  .main {
+    fill: theme("colors.main");
   }
 </style>

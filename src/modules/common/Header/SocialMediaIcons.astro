@@ -1,35 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
-
-const socialMedia = [
-  {
-    icon: "mdi:twitter",
-    href: "https://twitter.com/hector_reyes_",
-    name: "Twitter de Héctor Reyes",
-  },
-  {
-    icon: "mdi:github",
-    href: "https://github.com/hector-reyes-dev",
-    name: "Github de Héctor Reyes",
-  },
-  {
-    icon: "simple-icons:behance",
-    href: "https://www.behance.net/hector-reyes",
-    name: "Behance de Héctor Reyes",
-  },
-  {
-    icon: "simple-icons:whatsapp",
-    href: "https://wa.me/525575232654?text=Hola.%20Estoy%20interesado%20en%20trabajar%20contigo%20esta%20es%20mi%20idea:",
-    name: "WhatsApp de Héctor Reyes",
-  },
-];
+import { HEADER_SOCIAL_MEDIA } from "@constants/socialMedia";
 ---
 
 <div class="flex gap-6 lg:gap-6">
   {
-    socialMedia.map(({ href, icon, name }) => (
+    HEADER_SOCIAL_MEDIA.map(({ href, icon, name }) => (
       <a href={href} target="_blank" aria-label={name}>
-        <Icon name={icon} class="text-black text-xl" />
+        <Icon name={icon} class="text-black text-xl hover:text-main" />
       </a>
     ))
   }

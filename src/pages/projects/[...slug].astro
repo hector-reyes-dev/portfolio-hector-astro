@@ -1,9 +1,11 @@
 ---
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import type { GetStaticPaths } from "astro";
 
-import ProjectLayout from "./ProjectLayout.astro";
+import Layout from "@common/Layout.astro";
+import { BackButton } from "@common/BackButton";
 
 export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");
@@ -19,11 +21,17 @@ const { cover, title, description } = project.data;
 const { Content } = await project.render();
 ---
 
-<ProjectLayout>
-  <main class="prose" transition:name={title}>
-    <Image src={cover} alt={title} />
+<Layout title={title} description={description} headerTitle="Mis proyectos">
+  <main
+    class="prose w-full m-auto px-2 xl:w-[1024px] py-24"
+    transition:name={title}
+  >
+    <Image src={cover} alt={title} class="w-full object-cover rounded-lg" />
+    <BackButton client:load>
+      <Icon name="mdi:arrow-u-left-top" class="min-w-6" />
+    </BackButton>
     <h1>{title}</h1>
     <p>{description}</p>
     <Content />
   </main>
-</ProjectLayout>
+</Layout>

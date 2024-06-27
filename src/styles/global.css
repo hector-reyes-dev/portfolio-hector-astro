@@ -18,12 +18,36 @@
   );
 }
 
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Instrument Sans", sans-serif;
+  font-family: theme("fontFamily.sans");
   background-color: theme("colors.white");
   box-sizing: border-box;
 }

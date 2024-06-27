@@ -8,7 +8,7 @@ import Footer from "./Footer/Footer.astro";
 
 import "@styles/global.css";
 
-const { title, description } = Astro.props;
+const { title, description, headerTitle } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ const { title, description } = Astro.props;
   <ViewTransitions />
   <body>
     <Background />
-    <Header title="Creemos algo juntos" />
+    <Header title={headerTitle} />
     <slot />
     <Footer />
   </body>

@@ -1,0 +1,24 @@
+---
+import Layout from "@common/Layout.astro";
+import Phrase from "@common/Phrase.astro";
+import Contact from "@common/Contact/Contact.astro";
+import CategoryChips from "@common/CategoryChips.astro";
+import SectionTitle from "@common/SectionTitle.astro";
+import Projects from "@home/Projects/Projects.astro";
+
+import { SEO_PROJECTS } from "@constants/seo";
+
+const { title, description } = SEO_PROJECTS;
+---
+
+<Layout title={title} description={description} headerTitle="Mis Proyectos">
+  <main class="m-auto px-2 md:px-4 2xl:w-4/6 xl:w-5/6 w-full py-24">
+    <section id="proyectos" class="w-full mb-8">
+      <SectionTitle subtitle="Proyectos" headline="Todos mis proyectos" />
+      <CategoryChips />
+      <Projects />
+    </section>
+    <Phrase />
+    <Contact />
+  </main>
+</Layout>
