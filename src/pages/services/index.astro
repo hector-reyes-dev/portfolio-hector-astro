@@ -2,11 +2,42 @@
 import Layout from "@common/Layout.astro";
 import Phrase from "@common/Phrase.astro";
 
-import Contact from "../../modules/common/Contact/Contact.astro";
+import Hero from "@home/Hero/Hero.astro";
+import Services from "@home/Services/Services.astro";
+import Contact from "@common/Contact/Contact.astro";
+
+import { SEO_DESIGN } from "@constants/seo";
+
+const { title, description } = SEO_DESIGN;
 ---
 
-<Layout title="Héctor Reyes - Creemos algo juntos 🚀">
-  <main class="m-auto px-2 pt-32 md:px-6 2xl:w-3/5 xl:w-4/5 w-full">
+<Layout
+  title={title}
+  description={description}
+  headerTitle="Diseñemos algo juntos"
+>
+  <main class="w-full m-auto px-2 xl:w-[1024px]">
+    <Hero>
+      <h1
+        slot="main-title"
+        class="text-red-light text-2xl text-center md:text-4xl md:text-left"
+      >
+        ¡Hola! Soy <strong>Héctor Reyes</strong>.
+        <span class="block mt-2 text-base text-balance md:text-xl">
+          <strong>Especialista en Diseño de Interfaces (UI)</strong> con una extensa
+          trayectoria en la creación de productos web visualmente impactantes y funcionales.</span
+        >
+      </h1>
+      <p slot="intro" class="mt-4 text-base text-balance">
+        Estoy enfocado en la creación de proyectos que destaquen por su
+        identidad visual, creatividad, calidad y factor sorpresa. Me apasiona la
+        optimización del diseño y la experiencia del usuario, y estoy
+        comprometido con la excelencia en cada detalle estético. <strong
+          >¡Hagamos tu proyecto realidad juntos!</strong
+        >
+      </p>
+    </Hero>
+    <Services />
     <Phrase />
     <Contact />
   </main>
