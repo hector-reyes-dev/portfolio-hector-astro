@@ -1,8 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectCard from "./ProjectCard.astro";
+import Button from "@common/Button.astro";
+import { Icon } from "astro-icon/components";
 
-const projects = await getCollection("projects");
+const { category = "main" } = Astro.props;
+
+const projects = await getCollection("projects", ({ data }) =>
+  data.categories.map((cat: string) => cat.toLowerCase()).includes(category)
+);
 ---
 
 <div class="flex flex-wrap items-start">
@@ -24,4 +30,10 @@ const projects = await getCollection("projects");
       );
     })
   }
+</div>
+<div class="w-full flex items-center justify-center mt-4">
+  <Button type="text" name="proyectos" href="/projects">
+    <Icon name="mdi:stars" class="text-white min-w-6" />
+    <span class="btn-label">Ver todos mis proyectos</span>
+  </Button>
 </div>

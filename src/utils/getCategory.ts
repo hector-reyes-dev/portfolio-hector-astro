@@ -3,6 +3,7 @@ const categoriesList = {
   "front-end": "Front-End",
   "back-end": "Back-End",
   design: "Diseño",
+  main: "Destacado",
   chip: "chiplabel",
 } as const;
 

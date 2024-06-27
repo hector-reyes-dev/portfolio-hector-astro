@@ -9,6 +9,6 @@ icons:
     "simple-icons:adobeillustrator",
     "mdi:instagram",
   ]
-categories: ["design"]
+categories: ["main", "design"]
 size: "big"
 ---

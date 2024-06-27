@@ -11,7 +11,7 @@ icons:
     "simple-icons:figma",
     "simple-icons:notion",
   ]
-categories: ["front-end", "design"]
+categories: ["main", "front-end", "design"]
 size: "big"
 ---
 
