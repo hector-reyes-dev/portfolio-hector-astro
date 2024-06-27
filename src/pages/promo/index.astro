@@ -1,0 +1,44 @@
+---
+import Layout from "@common/Layout.astro";
+import Phrase from "@common/Phrase.astro";
+
+import Hero from "@home/Hero/Hero.astro";
+import Projects from "@home/Projects/Projects.astro";
+import Services from "@home/Services/Services.astro";
+import Resources from "@home/Resources/Resources.astro";
+import Contact from "@common/Contact/Contact.astro";
+
+import { SEO_DESIGN } from "@constants/seo";
+
+const { title, description } = SEO_DESIGN;
+---
+
+<Layout
+  title={title}
+  description={description}
+  headerTitle="Tu Sitio Web de Alto Rendimiento"
+>
+  <main class="w-full m-auto px-2 xl:w-[1024px]">
+    <Hero>
+      <h1
+        slot="main-title"
+        class="text-red-light text-2xl text-center md:text-4xl md:text-left"
+      >
+        Tu Sitio Web de <strong>Alto Rendimiento</strong> .
+        <span class="block mt-2 text-base text-balance md:text-xl">
+          Garantía de Excelencia en Performance
+        </span>
+        <p slot="intro" class="mt-4 text-base text-balance">
+          Utilizando la última tecnología y un enfoque en el diseño único,
+          creamos sitios web que destacan visualmente y brindan una experiencia
+          de usuario <strong>excepcional</strong>.
+        </p>
+      </h1>
+      <Projects />
+      <Services />
+      <Phrase />
+      <Resources />
+      <Contact />
+    </Hero>
+  </main>
+</Layout>
