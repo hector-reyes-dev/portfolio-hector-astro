@@ -1,0 +1,42 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+import Head from "@common/Head.astro";
+import Welcome from "@wedding/Welcome.astro";
+import Gallery from "@wedding/Gallery.astro";
+import Parents from "@wedding/Parents.astro";
+import Gifts from "@wedding/Gifts.astro";
+import PlaceTime from "@wedding/PlaceTime/PlaceTime.astro";
+import ConfirmAssistance from "@wedding/ConfirmAssistance/ConfirmAssistance.astro";
+import OurStory from "@wedding/OurStory.astro";
+import Contact from "@wedding/Contact.astro";
+import Footer from "@wedding/Footer.astro";
+import Background from "@wedding/Background.astro";
+
+import "@styles/global-wedding.css";
+
+const title = "Carol y Héctor: Nuestra boda";
+const description =
+  "Te invitamos a celebrar con nosotros este gran momento de nuestras vidas, donde el amor se convierte en nuestro más bello vínculo y el comienzo de una eterna aventura juntos.";
+---
+
+<!doctype html>
+<html lang="es">
+  <Head title={title} description={description} />
+  <body class="overflow-x-hidden">
+    <Background />
+    <main
+      class="view w-full m-auto px-4 md:px-8 xl:w-[1024px] flex flex-col items-center gap-20 md:gap-40 z-100"
+    >
+      <Welcome />
+      <PlaceTime />
+      <ConfirmAssistance />
+      <Gallery />
+      <Parents />
+      <Gifts />
+      <OurStory />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
+</html>

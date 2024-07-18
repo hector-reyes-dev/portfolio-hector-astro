@@ -1,0 +1,16 @@
+---
+const { title, subtitle, description, label, href } = Astro.props;
+---
+
+<div class="mt-8 flex flex-col gap-2">
+  <span class="subtitle">{subtitle}</span>
+  <h2 class="title text-4xl md:text-6xl text-wedding-main appear">{title}</h2>
+</div>
+<p>{description}</p>
+<a href={href} target="_blank" class="button grow">{label}</a>
+
+<style>
+  .button {
+    @apply w-full bg-wedding-white border border-wedding-secondary bg-opacity-50 rounded-md uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-secondary hover:text-wedding-white;
+  }
+</style>

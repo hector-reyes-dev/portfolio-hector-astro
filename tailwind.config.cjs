@@ -21,6 +21,12 @@ module.exports = {
         purple: "#6b42df",
         "purple-light": "#987aef",
         blue: "#6bb5f9",
+        wedding: {
+          main: "#C65D6A",
+          secondary: "#C89260",
+          black: "#2C2C2C",
+          white: "#F8F8F8",
+        },
       },
       fontFamily: {
         sans: ["Eudoxus Sans", ...defaultTheme.fontFamily.sans],
