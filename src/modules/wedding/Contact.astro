@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon/components";
+import Button from "./Button.astro";
 
 const TITLE = "Contacto";
-const DESCRIPTION = "Contactanos si tienes cualquier duda.";
+const DESCRIPTION =
+  "Contactanos si tienes cualquier duda, estaremos encantados de ayudar a que tu experiencia sea la mejor.";
 const BUTTONS = [
-  { label: "Contacta a Carol", url: "#" },
-  { label: "Contacta a Héctor", url: "#" },
+  { label: "Contacta a Carol", url: "https://wa.me/5215574972300" },
+  { label: "Contacta a Héctor", url: "https://wa.me/5215575232654" },
 ];
 ---
 
@@ -20,20 +22,8 @@ const BUTTONS = [
   >
     {
       BUTTONS.map(({ label, url }) => (
-        <a href={url} target="_blank" class="button grow">
-          <Icon
-            name="simple-icons:whatsapp"
-            class="text-wedding-black min-w-6"
-          />
-          <span class="btn-label">{label}</span>
-        </a>
+        <Button label={label} url={url} icon="simple-icons:whatsapp" />
       ))
     }
   </div>
 </section>
-
-<style>
-  .button {
-    @apply w-full md:w-1/3 items-center gap-2 bg-wedding-white bg-opacity-50 border border-wedding-secondary rounded-md uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-secondary hover:text-wedding-white;
-  }
-</style>

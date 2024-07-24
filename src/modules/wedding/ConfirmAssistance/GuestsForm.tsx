@@ -41,7 +41,7 @@ export const GuestsForm = () => {
       <a
         href={selectedValue ? link : "#"}
         target="_blank"
-        className="w-full bg-wedding-secondary text-wedding-white rounded-sm uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-white hover:text-wedding-secondary hover:border hover:border-wedding-secondary"
+        className="w-full bg-wedding-secondary text-wedding-white rounded-md uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-white hover:text-wedding-secondary border hover:border-wedding-secondary"
         onClick={(e) => {
           if (!selectedValue) {
             e.preventDefault();

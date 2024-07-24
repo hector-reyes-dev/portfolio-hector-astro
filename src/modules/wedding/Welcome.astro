@@ -5,6 +5,7 @@ import { Countdown } from "./Counter";
 import NamesDesktop from "@assets/wedding/names-desktop.png";
 import NamesMobile from "@assets/wedding/names-mobile.png";
 import headerImage from "@assets/wedding/header-image.png";
+import Button from "./Button.astro";
 
 const QUOTE =
   "“Como llama divina es el fuego ardiente del amor. Ni las muchas aguas pueden apagarlo, ni los ríos pueden extinguirlo” - Cantares 8:6-7";
@@ -20,7 +21,7 @@ const TEXT =
 />
 
 <section class="mt-20 md:mt-40 flex flex-col items-center justify-center gap-8">
-  <span class="w-9/12 md:w-6/12 italic text-center text-pretty">{QUOTE}</span>
+  <span class="w-9/12 md:w-6/12 italic text-center text-balance">{QUOTE}</span>
 
   <Image
     src={NamesDesktop}
@@ -37,8 +38,15 @@ const TEXT =
     <span class="subtitle text-center">{SUBTITLE}</span>
     <Countdown client:load />
 
-    <p class="w-full md:w-2/3 md:text-center md:text-balance">
-      {TEXT}
-    </p>
+    <div class="w-full md:w-2/3 md:text-center md:text-pretty">
+      <p class="mb-8">
+        {TEXT}
+      </p>
+      <Button
+        url="/boda#ConfirmAssistance"
+        target="_self"
+        label="Confirmar asistencia"
+      />
+    </div>
   </div>
 </section>

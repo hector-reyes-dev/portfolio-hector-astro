@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  url: string;
+  label: string;
+  icon?: string;
+  target?: "_blank" | "_self";
+}
+
+const { url, icon, label, target = "_blank" } = Astro.props;
+---
+
+<a href={url} target={target} class="wedding-button grow">
+  {icon ? <Icon name={icon} class="text-wedding-black min-w-6" /> : ""}
+  <span class="text-inherit">{label}</span>
+</a>
+
+<style>
+  .wedding-button {
+    @apply w-full items-center gap-2 bg-wedding-white bg-opacity-50 border border-wedding-secondary rounded-md uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-secondary hover:text-wedding-white;
+  }
+</style>

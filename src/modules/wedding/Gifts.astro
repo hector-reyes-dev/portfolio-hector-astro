@@ -1,4 +1,6 @@
 ---
+import Button from "./Button.astro";
+
 const TITLE = "Regalos";
 const DESCRIPTION =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
@@ -17,18 +19,6 @@ const BUTTONS = [
   <div
     class="mt-4 w-full flex flex-col md:flex-row items-center justify-center gap-4"
   >
-    {
-      BUTTONS.map(({ label, url }) => (
-        <a href={url} target="_blank" class="button grow">
-          {label}
-        </a>
-      ))
-    }
+    {BUTTONS.map(({ label, url }) => <Button label={label} url={url} />)}
   </div>
 </section>
-
-<style>
-  .button {
-    @apply w-full md:w-1/3 bg-wedding-white bg-opacity-50 border border-wedding-secondary rounded-md uppercase flex justify-center py-4 tracking-wider hover:bg-wedding-secondary hover:text-wedding-white;
-  }
-</style>
