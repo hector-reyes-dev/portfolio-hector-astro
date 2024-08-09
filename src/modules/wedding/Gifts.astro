@@ -1,16 +1,21 @@
 ---
 import Button from "./Button.astro";
+import { type IButton } from "@wedding/interfaces/IButton";
 
 const TITLE = "Regalos";
 const DESCRIPTION =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-const BUTTONS = [
-  { label: "Lista de Regalos", url: "#" },
-  { label: "Regalo en efectivo", url: "#" },
+const BUTTONS: IButton[] = [
+  { label: "Lista de Regalos", url: "#", target: "_blank" },
+  {
+    label: "Regalo en efectivo",
+    url: "/boda/regalo-en-efectivo",
+    target: "_self",
+  },
 ];
 ---
 
-<section class="flex flex-col md:items-center gap-4">
+<section id="gifts" class="flex flex-col md:items-center gap-4">
   <h2 class="title text-4xl md:text-6xl text-wedding-main appear">{TITLE}</h2>
   <p class="w-full md:w-2/3 md:text-center text-balance">
     {DESCRIPTION}
@@ -19,6 +24,10 @@ const BUTTONS = [
   <div
     class="mt-4 w-full flex flex-col md:flex-row items-center justify-center gap-4"
   >
-    {BUTTONS.map(({ label, url }) => <Button label={label} url={url} />)}
+    {
+      BUTTONS.map(({ label, url, target }) => (
+        <Button label={label} url={url} target={target} />
+      ))
+    }
   </div>
 </section>

@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import { ViewTransitions } from "astro:transitions";
+
+import Head from "@common/Head.astro";
+import CashGift from "@wedding/CashGift/CashGift.astro";
+import Footer from "@wedding/Footer.astro";
+import Button from "@wedding/Button.astro";
+
+import NamesDesktop from "@assets/wedding/names-desktop.png";
+import NamesMobile from "@assets/wedding/names-mobile.png";
+import headerImage from "@assets/wedding/header-image.png";
+
+import "@styles/global-wedding.css";
+
+const title = "Carol y Héctor: Nuestra boda";
+const description =
+  "Te invitamos a celebrar con nosotros este gran momento de nuestras vidas, donde el amor se convierte en nuestro más bello vínculo y el comienzo de una eterna aventura juntos.";
+---
+
+<!doctype html>
+<html lang="es">
+  <ViewTransitions />
+  <Head title={title} description={description} />
+  <body class="overflow-x-hidden">
+    <main
+      class="w-full m-auto px-4 md:px-8 xl:w-[1024px] flex flex-col items-center z-100"
+    >
+      <Image
+        src={headerImage}
+        alt="Imagen"
+        class="w-full absolute opacity-80 z-50 small"
+      />
+
+      <section
+        class="mt-28 md:mt-40 flex flex-col items-center justify-center gap-8"
+      >
+        <Image
+          src={NamesDesktop}
+          alt="Carol y Héctor"
+          class="w-8/12 hidden md:block appear"
+        />
+        <Image
+          src={NamesMobile}
+          alt="Carol y Héctor"
+          class="w-10/12 block md:hidden appear"
+        />
+      </section>
+      <CashGift />
+      <div class="w-full md:w-1/2 mb-40">
+        <Button
+          label="Regresar a la invitación"
+          url="/boda#gifts"
+          target="_self"
+        />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -13,6 +13,7 @@ export const iconList = [
   "mdi:language-css3",
   "mdi:sass",
   "mdi:git",
+  "mdi:content-copy",
   "simple-icons:figma",
   "simple-icons:notion",
   "simple-icons:affinitydesigner",
