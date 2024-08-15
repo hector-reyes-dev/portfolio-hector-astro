@@ -61,3 +61,7 @@ h6,
 p {
   color: theme("colors.black");
 }
+
+a {
+  text-decoration: none;
+}

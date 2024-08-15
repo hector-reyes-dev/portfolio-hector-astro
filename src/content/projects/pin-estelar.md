@@ -12,3 +12,7 @@ icons:
 categories: ["main", "design"]
 size: "big"
 ---
+
+Proyecto de diseño gráfico e ilustración. Desarrollo del sitio web de educación y astronomía **Conejo Estelar**, diseñado para ofrecer noticias y recursos sobre el universo. Creé un diseño web completamente responsive, asegurando que el contenido educativo sea accesible en cualquier dispositivo.
+
+**Habilidades destacadas**: Diseño responsive, Figma to HTML, SEO-friendly.

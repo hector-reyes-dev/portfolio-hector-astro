@@ -15,4 +15,6 @@ categories: ["main", "front-end", "design"]
 size: "big"
 ---
 
-## Contenido markdown
+Desarrollo de la aplicación móvil **FoodMood**, que ofrece recetas de cocina mediante consumo de APIs. Creé una interfaz UI moderna y desarrollé la aplicación en **NextJS**, asegurando una experiencia fluida y receptiva.
+
+**Habilidades destacadas**: UI/UX Design, Desarrollo en NextJS, Consumo de APIs.

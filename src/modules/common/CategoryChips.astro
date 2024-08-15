@@ -7,6 +7,6 @@ const categories = (await getAllCategories()).map((category) =>
 );
 ---
 
-<div class="w-full flex gap-4 items-center justify-center my-4">
+<div class="w-full flex gap-4 items-center justify-center my-4 flex-wrap">
   {categories.map((category) => <Chip category={category} />)}
 </div>

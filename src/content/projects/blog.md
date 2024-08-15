@@ -13,3 +13,7 @@ icons:
 categories: ["main", "back-end", "design"]
 size: "small"
 ---
+
+Desarrollo de un backend en **NestJS** para una API que soporta un blog de tecnología. El proyecto incluye la integración con **MongoDB** para gestionar grandes cantidades de contenido de manera eficiente.
+
+**Habilidades destacadas**: NestJS, MongoDB, API Development.

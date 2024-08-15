@@ -15,3 +15,7 @@ icons:
 categories: ["front-end", "design"]
 size: "small"
 ---
+
+Desarrollo de un sitio web elegante y moderno para **Acabados Integrales**, una empresa de muebles e interiores. Diseño visual y desarrollo utilizando **ReactJS**, optimizando para una alta conversión y un rendimiento rápido.
+
+**Habilidades destacadas**: Diseño UI, Desarrollo en ReactJS, Web Responsive, Figma.

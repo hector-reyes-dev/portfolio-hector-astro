@@ -14,3 +14,7 @@ icons:
 categories: ["front-end", "design"]
 size: "small"
 ---
+
+Diseño y desarrollo de un sitio de **e-commerce** que equilibra profesionalismo y estilo amigable. Con una navegación intuitiva y diseño moderno, el sitio guía al usuario hacia la compra de productos.
+
+**Habilidades destacadas**: E-commerce, Desarrollo en **NextJS**, UX para conversiones, Diseño responsive.
