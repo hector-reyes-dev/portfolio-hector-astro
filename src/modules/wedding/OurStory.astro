@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import image from "@assets/wedding/placeholder-our-story.png";
+import storyImg1 from "@assets/wedding/story-img-1.png";
+import storyImg2 from "@assets/wedding/story-img-2.png";
 
 const TITLE = "Nuestra Historia de Amor";
 ---
@@ -9,8 +10,8 @@ const TITLE = "Nuestra Historia de Amor";
   class="w-full flex flex-col md:flex-row items-center justify-center gap-8"
 >
   <div class="w-full md:w-2/6 px-0">
-    <Image src={image} alt="" class="w-full grow mb-4" />
-    <Image src={image} alt="" class="w-full grow" />
+    <Image src={storyImg1} alt="" class="w-full grow mb-4" />
+    <Image src={storyImg2} alt="" class="w-full grow" />
   </div>
   <div class="w-full md:w-4/6 px-0 md:pl-4">
     <h2 class="title mb-8 text-4xl md:text-6xl text-wedding-main appear">

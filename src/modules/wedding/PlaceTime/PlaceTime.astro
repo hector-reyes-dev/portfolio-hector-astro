@@ -1,7 +1,7 @@
 ---
-import placeholder from "@assets/wedding/placeholder-image.png";
 import { Image } from "astro:assets";
 import InfoItem from "./InfoItem.astro";
+import mainImg from "@assets/wedding/main-img.png";
 
 const ITEMS = [
   {
@@ -27,7 +27,7 @@ const ITEMS = [
   class="w-full flex flex-col md:flex-row items-center md:justify-around gap-8"
 >
   <div class="w-full md:w-1/2">
-    <Image src={placeholder} alt="Imagen" class="appear" />
+    <Image src={mainImg} alt="Imagen" class="appear" />
   </div>
   <div class="w-full md:w-1/2 flex flex-col gap-4">
     {ITEMS.map((item) => <InfoItem {...item} />)}
