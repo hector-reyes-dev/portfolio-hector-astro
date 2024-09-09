@@ -16,6 +16,7 @@ export const guests = [
   { name: "Mario Bautista", confirmed: false },
   { name: "Miranda Jaramillo", confirmed: false },
   { name: "Nancy Zuñiga", confirmed: false },
+  { name: "Nicolás Alfaro", confirmed: false },
   { name: "Oscar Ricardo Martínez", confirmed: false },
   { name: "Raul Vázquez", confirmed: false },
   { name: "Rebeca García", confirmed: false },
