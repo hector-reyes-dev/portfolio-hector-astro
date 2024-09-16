@@ -6,6 +6,7 @@ export const guests = [
   { name: "César Martínez", confirmed: false },
   { name: "Cirilo Reyes", confirmed: false },
   { name: "Daniel Aguilar", confirmed: false },
+  { name: "Gabriela Altamirano Pérez", confirmed: false },
   { name: "Guadalupe Martínez", confirmed: false },
   { name: "Jonathan Sánchez", confirmed: false },
   { name: "José Antonio Aguilar", confirmed: false },
