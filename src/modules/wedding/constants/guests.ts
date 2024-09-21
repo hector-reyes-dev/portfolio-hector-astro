@@ -1,5 +1,6 @@
 export const guests = [
   { name: "Alma Guadalupe De la Rosa", confirmed: false },
+  { name: "Ángel Lemus", confirmed: false },
   { name: "Brenda Arroyos", confirmed: false },
   { name: "Brenda Hurtado", confirmed: false },
   { name: "Carolina Rodríguez", confirmed: false },
@@ -26,4 +27,5 @@ export const guests = [
   { name: "Ricardo Rivera", confirmed: false },
   { name: "Sofía Galindo", confirmed: false },
   { name: "Susana Bautista", confirmed: false },
+  { name: "Yessenia Flores", confirmed: false },
 ];
