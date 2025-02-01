@@ -3,17 +3,22 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Chip from "@common/Chip.astro";
-import type { Category } from "@common/Chip.astro";
+import type { Category } from "@utils/getCategory";
+import type { ImageMetadata } from "astro";
 
 interface Props {
-  cover: any;
+  cover: ImageMetadata;
   title: string;
   description: string;
   icons: string[];
   categories: Category[];
-  size?: "big" | "small";
+  size: "big" | "small";
   slug: string;
 }
+
+const defaultProps = {
+  size: "small" as const,
+} satisfies Partial<Props>;
 
 const { cover, title, description, icons, categories, slug } = Astro.props;
 ---
