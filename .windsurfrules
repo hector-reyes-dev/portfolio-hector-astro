@@ -1,0 +1,41 @@
+<project_rules>
+<general_info> - Project Name: Portfolio Héctor Reyes - Astro - Description: Personal portfolio built with Astro and Tailwind showcasing projects, skills, and professional experience. - Framework: Astro - Styling: Tailwind CSS - React Integration: For interactive components - Deployment: [https://hectorcreative.dev/](https://hectorcreative.dev/) - Figma Design: [https://www.figma.com/file/lrFeVCv96C4fXSyxgOUVv2/HR-Portfolio---Projects-Template?type=design&node-id=0%3A1&mode=design&t=zEIY2iUSLnEQPWAJ-1](https://www.figma.com/file/lrFeVCv96C4fXSyxgOUVv2/HR-Portfolio---Projects-Template?type=design&node-id=0%3A1&mode=design&t=zEIY2iUSLnEQPWAJ-1)
+</general_info>
+
+<general_code_style> - Follow standard JavaScript/TypeScript best practices for code formatting. - Use descriptive and consistent naming conventions for files, components, and variables. - Prefer named exports for components and functions. - Maintain clean and well-commented code. - Use TypeScript for all new components. - Follow the existing component structure. - Name files using kebab-case. - Name components using PascalCase. - Comment code when necessary to explain complex logic. - Keep components small and with single responsibility.
+</general_code_style>
+
+<project_structure> - Utilize Astro's file-based routing and component structure. - Organize components into logical directories (e.g., components, layouts, pages). - Leverage Astro's features for static site generation (SSG). - Follow Astro's best practices for content collections and data fetching. - Modular organization with a clear separation of responsibilities. - Follow the existing folder structure:
+_ /src/assets: for images and static resources
+_ /src/constants: for reusable constant data
+_ /src/content: for structured site content
+_ /src/lib: for libraries and utilities
+_ /src/modules: for components organized by functionality
+_ /src/pages: for site pages
+_ /src/styles: for global styles
+_ /src/utils: for utility functions
+</project_structure>
+
+<styling_ui> - Use Tailwind CSS for styling, adhering to utility-first principles. - Ensure responsive design for compatibility across devices and screen sizes. - Implement the design specifications from the provided Figma file. - Focus on accessibility and user experience in UI design. - Maintain the color palette defined in tailwind.config.cjs. - Respect the established design system and visual identity. - Implement accessibility practices in all components.
+</styling_ui>
+
+<content_management> - Manage portfolio projects and other content using Astro's content collections or data files. - Ensure content is well-structured and easily maintainable. - Optimize images and assets for web performance. - Use reusable components wherever possible.
+</content_management>
+
+  <performance>
+    - Optimize code for performance, ensuring fast load times and efficient resource usage.
+    - Minimize synchronous operations, leveraging asynchronous programming when needed.
+    - Implement caching mechanisms (e.g., browser caching) to reduce load times.
+    - Optimize images before including them in the project.
+    - Use lazy loading for images and heavy components.
+    - Minimize client-side JavaScript usage.
+    - Leverage Astro's SSG capabilities.
+    - Implement progressive loading strategies where appropriate.
+  </performance>
+
+<development_workflow> - Use npm for package management. - Follow the project's README instructions for installation and deployment (npm install, npm run dev). - Commit changes regularly using Git with clear and descriptive commit messages. - Ensure code is tested and reviewed before merging changes. - Verify that the site functions correctly in development mode before building. - Run `npm run build` to generate the production version. - Check that all links and resources function correctly. - Verify performance and accessibility before deploying. - Regularly update dependencies. - Document significant changes in the README. - Keep portfolio content updated. - Perform cross-browser and cross-device testing. - Deployment Site: hectorcreative.dev
+</development_workflow>
+
+<additional_considerations> - Prioritize performance and SEO best practices. - Implement accessibility guidelines to ensure inclusivity. - Stay consistent with the branding and design found in the Figma file. - Focus on showcasing your skills and experience as a Front-End Developer with UI/UX design capabilities. - Maintain up-to-date dependencies.
+</additional_considerations>
+</project_rules>
