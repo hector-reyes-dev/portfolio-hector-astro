@@ -13,10 +13,10 @@ const menuItems = [
 ---
 
 <nav>
-  <ul class="gap-6 hidden lg:flex">
+  <ul class="gap-6 hidden md:flex">
     {
       menuItems.map(({ title, to, target }) => (
-        <li class="uppercase tracking-widest text-[13px] hover:text-main">
+        <li class="uppercase tracking-widest text-[13px] hover:text-main dark:text-dark-text dark:hover:text-dark-accent transition-colors">
           <a href={to} target={target}>
             {title}
           </a>

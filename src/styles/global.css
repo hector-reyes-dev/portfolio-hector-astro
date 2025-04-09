@@ -16,6 +16,31 @@
     theme("colors.orange"),
     theme("colors.orange-light")
   );
+
+  /* Variables para el modo claro (default) */
+  --color-background: theme("colors.white");
+  --color-surface: theme("colors.light");
+  --color-text: theme("colors.black");
+  --color-text-secondary: theme("colors.dark-gray");
+  --color-border: theme("colors.light-gray");
+  --color-accent: theme("colors.main");
+}
+
+.dark {
+  /* Variables para el modo oscuro */
+  --color-background: theme("colors.dark.background");
+  --color-surface: theme("colors.dark.surface");
+  --color-text: theme("colors.dark.text");
+  --color-text-secondary: theme("colors.dark.text-secondary");
+  --color-border: theme("colors.dark.border");
+  --color-accent: theme("colors.dark.accent");
+
+  /* Gradientes para modo oscuro */
+  --main-gradient: linear-gradient(
+    45deg,
+    theme("colors.dark.main"),
+    theme("colors.dark.accent")
+  );
 }
 
 @font-face {
@@ -48,8 +73,10 @@ html {
 
 body {
   font-family: theme("fontFamily.sans");
-  background-color: theme("colors.white");
+  background-color: var(--color-background);
+  color: var(--color-text);
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -59,7 +86,8 @@ h4,
 h5,
 h6,
 p {
-  color: theme("colors.black");
+  color: var(--color-text);
+  transition: color 0.3s ease;
 }
 
 a {

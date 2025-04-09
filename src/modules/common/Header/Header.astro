@@ -2,6 +2,7 @@
 import LogoIcon from "@common/LogoIcon.astro";
 import Nav from "./Nav.astro";
 import SocialMediaIcons from "./SocialMediaIcons.astro";
+import ThemeToggle from "@common/ThemeToggle.astro";
 import { getLastWord } from "@utils/getLastWord";
 
 const { title } = Astro.props;
@@ -10,16 +11,18 @@ const { text, lastWord } = await getLastWord(title);
 
 <header>
   <div class="header-container">
-    <a href="/" class="header-title flex gap-2 items-center justify-start">
+    <a href="/" class="header-title">
       <LogoIcon color="main" width={40} />
       <h2>
         {text}
-        <span class="text-red">{lastWord}</span>
+        <span>{lastWord}</span>
       </h2>
     </a>
-
-    <Nav />
-    <SocialMediaIcons />
+    <div class="nav-container">
+      <Nav />
+      <SocialMediaIcons />
+      <ThemeToggle />
+    </div>
   </div>
 </header>
 
@@ -29,10 +32,18 @@ const { text, lastWord } = await getLastWord(title);
   }
 
   .header-container {
-    @apply mx-auto w-full pt-6 pb-4 px-8 lg:w-[1024px] flex flex-col md:flex-row justify-between items-center rounded-b-md backdrop-blur-lg bg-white bg-opacity-30;
+    @apply mx-auto w-full pt-6 pb-4 px-12 xl:w-[1280px] flex flex-col lg:flex-row items-center justify-around rounded-b-xl backdrop-blur-lg bg-white bg-opacity-30 dark:bg-dark-surface dark:bg-opacity-30 transition-colors;
   }
 
   .header-title {
-    @apply font-bold lg:text-xl mb-4 lg:mb-0;
+    @apply font-bold mb-4 lg:mb-0 flex gap-2 items-center justify-between whitespace-nowrap;
+  }
+
+  .header-title span {
+    @apply text-red dark:text-dark-main whitespace-nowrap;
+  }
+
+  .nav-container {
+    @apply w-full flex justify-center gap-4 md:justify-around items-center;
   }
 </style>

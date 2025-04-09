@@ -25,19 +25,19 @@ const { Content } = await project.render();
 ---
 
 <Layout title={title} description={description} headerTitle="Mis proyectos">
-  <section
-    class="w-full m-auto px-2 xl:w-[1024px] py-24 flex flex-col items-center"
-  >
+  <section class="w-full md:w-2/3 m-auto px-2 py-24 flex flex-col items-center">
     <BackButton client:load>
       <Icon name="mdi:arrow-u-left-top" class="min-w-6" />
     </BackButton>
-    <main class="prose m-auto" transition:name={title}>
+    <main class="m-auto" transition:name={title}>
       <Image src={cover} alt={title} class="w-full object-cover rounded-lg" />
-      <div class="w-full md:w-2/3 mx-auto flex flex-col items-center">
+      <div class="p-8 w-full md:w-2/3 mx-auto flex flex-col items-center">
         <div class="flex gap-1">
           {categories.map((category: Category) => <Chip category={category} />)}
         </div>
-        <h1 class="my-4 text-center">{title}</h1>
+        <h1 class="my-4 text-3xl font-bold text-center">
+          {title}
+        </h1>
         <div class="mb-4 flex gap-2">
           {
             icons.map((icon) => (
@@ -45,9 +45,13 @@ const { Content } = await project.render();
             ))
           }
         </div>
-        <p class="text-center text-balanced">{description}</p>
+        <p class="text-center">
+          {description}
+        </p>
         <hr class="w-full my-4" />
-        <Content />
+        <div>
+          <Content />
+        </div>
         <hr class="w-full mt-4 mb-8" />
       </div>
     </main>

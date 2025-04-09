@@ -26,7 +26,7 @@ export const RandomMessage = () => {
   const [styles, setStyles] = useState({});
 
   const containerStyles =
-    "typewriter py-1 px-4 bg-white rounded-full shadow-sm text-dark-gray text-sm";
+    "typewriter py-1 px-4 bg-white dark:bg-dark-surface rounded-full shadow-sm text-dark-gray dark:text-dark-text text-sm";
 
   useEffect(() => {
     setMessage(getRandom(messages));

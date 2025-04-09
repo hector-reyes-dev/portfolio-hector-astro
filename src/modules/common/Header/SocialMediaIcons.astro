@@ -3,11 +3,14 @@ import { Icon } from "astro-icon/components";
 import { HEADER_SOCIAL_MEDIA } from "@constants/socialMedia";
 ---
 
-<div class="flex gap-6 lg:gap-6">
+<div class="flex gap-4">
   {
     HEADER_SOCIAL_MEDIA.map(({ href, icon, name }) => (
       <a href={href} target="_blank" aria-label={name}>
-        <Icon name={icon} class="text-black text-xl hover:text-main" />
+        <Icon
+          name={icon}
+          class="text-black text-xl hover:text-main dark:text-dark-text dark:hover:text-dark-accent transition-colors"
+        />
       </a>
     ))
   }

@@ -13,8 +13,8 @@ const { iconName, title, description, subServices = [] } = Astro.props;
 
 <article class="w-full sm:w-80 flex flex-col gap-4 sm:px-4 my-4">
   <Image width={64} height={64} src={iconName} alt={title} />
-  <h3 class="text-black text-xl font-bold">{title}</h3>
-  <p class="text-base">{description}</p>
+  <h3 class="text-black dark:text-white text-xl font-bold">{title}</h3>
+  <p class="text-base dark:text-light">{description}</p>
   <ul class="pl-8 list-disc text-base">
     {subServices.map((service) => <li>{service}</li>)}
   </ul>

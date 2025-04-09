@@ -4,6 +4,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -21,11 +22,14 @@ module.exports = {
         purple: "#6b42df",
         "purple-light": "#987aef",
         blue: "#6bb5f9",
-        wedding: {
-          main: "#C65D6A",
-          secondary: "#C89260",
-          black: "#2C2C2C",
-          white: "#F8F8F8",
+        dark: {
+          main: "#ff3869",
+          background: "#121218",
+          surface: "#1e1e29",
+          text: "#fbfbfb",
+          "text-secondary": "#a6a6b5",
+          border: "#484753",
+          accent: "#987aef",
         },
       },
       fontFamily: {
