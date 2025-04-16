@@ -6,13 +6,26 @@ import listsImg from "@assets/lists-mockup.webp";
 import watchifyImg from "@assets/watchify-mockup.webp";
 
 const images = [
-  { img: foodMoodImg, alt: "Proyecto Food Mood. Mock up pantalla de inicio." },
+  {
+    img: foodMoodImg,
+    alt: "Proyecto Food Mood. Mock up pantalla de inicio.",
+    href: "/projects/food-mood",
+  },
   {
     img: comeetCatImg,
     alt: "Proyecto Comeet Cat. Mock up pantalla de inicio.",
+    href: "#",
   },
-  { img: listsImg, alt: "Proyecto Listas. Mock up pantalla de inicio." },
-  { img: watchifyImg, alt: "Proyecto Watchify. Mock up pantalla de inicio." },
+  {
+    img: listsImg,
+    alt: "Proyecto Listas. Mock up pantalla de inicio.",
+    href: "/projects/ikni",
+  },
+  {
+    img: watchifyImg,
+    alt: "Proyecto Watchify. Mock up pantalla de inicio.",
+    href: "#",
+  },
 ];
 ---
 
@@ -20,13 +33,10 @@ const images = [
   class="max-w-full p-0 md:pr-8 flex items-start justify-between lg:justify-center xl:justify-between"
 >
   {
-    images.map(({ img, alt }) => (
-      <Image
-        src={img}
-        alt={alt}
-        loading="eager"
-        class="hero-image mt-8 mr-[-440px] w-2/6 lg:mr-[-100px] xl:mr-[-800px]"
-      />
+    images.map(({ img, alt, href }) => (
+      <a href={href} class="hero-image">
+        <Image src={img} alt={alt} loading="eager" />
+      </a>
     ))
   }
 </div>
@@ -41,9 +51,7 @@ const images = [
     transition-property: z-index, filter;
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
-  }
-
-  @media screen {
+    @apply mt-8 mr-[-440px] w-2/6 lg:mr-[-100px] xl:mr-[-800px];
   }
 
   .hero-image:hover {
