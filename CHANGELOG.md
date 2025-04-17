@@ -5,14 +5,22 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.5] - 2025-04-17
+
+### Agregado
+
+- Página de error 404 agregada.
+
 ## [0.2.4] - 2025-04-16
 
 ### Eliminado
+
 - Eliminado archivo `src/constants/heroImages.ts` por no ser necesario.
 
 ## [0.2.3] - 2025-04-11
 
 ### Cambiado
+
 - Actualizado el enlace del CV en los componentes `Nav.astro` y `Phrase.astro`
 
 ## [0.2.2] - 2025-04-10

@@ -1,0 +1,28 @@
+---
+import Layout from "@common/Layout.astro";
+import Button from "@common/Button.astro";
+---
+
+<Layout
+  title="Página no encontrada"
+  description="Página no encontrada"
+  headerTitle="404"
+>
+  <main class="w-full min-h-[90vh] flex items-center justify-center">
+    <div class="flex flex-col items-center justify-center px-4 py-12">
+      <h1 class="text-9xl font-extrabold text-primary-500 drop-shadow mb-2">
+        404
+      </h1>
+      <h2 class="text-2xl font-semibold text-white mb-4">
+        Página no encontrada
+      </h2>
+      <p class="text-base text-gray-300 mb-8 text-center">
+        Lo sentimos, la página que buscas no existe o fue movida. Por favor,
+        verifica la URL o regresa al inicio.
+      </p>
+      <Button type="text" name="Regresar al Inicio" href="/">
+        <span>Regresar al Inicio</span>
+      </Button>
+    </div>
+  </main>
+</Layout>
