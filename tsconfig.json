@@ -12,7 +12,6 @@
       "@home/*": ["src/modules/home/*"],
       "@projects/*": ["src/modules/projects/*"],
       "@promo/*": ["src/modules/promo/*"],
-      "@wedding/*": ["src/modules/wedding/*"],
       "@utils/*": ["src/utils/*"]
     }
   }
