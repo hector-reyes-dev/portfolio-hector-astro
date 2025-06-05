@@ -39,7 +39,7 @@ npm run dev
 ## Built with 🛠️
 
 * [Figma](https://www.figma.com/) - Herramienta de Diseño y Prototipado
-* [Astro]([https://es.reactjs.org/](https://astro.build/)) - Framework Javascript
+* [Astro](https://astro.build/) - Framework Javascript
 * [Tailwind](https://tailwindcss.com/) - Styles
 
 
