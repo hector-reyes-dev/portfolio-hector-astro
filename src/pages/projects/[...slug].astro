@@ -5,10 +5,10 @@ import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 import Layout from "@common/Layout.astro";
-import { BackButton } from "@common/BackButton";
 import Chip from "@common/Chip.astro";
-import type { Category } from "@common/Chip.astro";
 import Button from "@common/Button.astro";
+import { BackButton } from "@common/BackButton";
+import type { Category } from "@utils/getCategory";
 
 export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");
@@ -25,7 +25,9 @@ const { Content } = await project.render();
 ---
 
 <Layout title={title} description={description} headerTitle="Mis proyectos">
-  <section class="w-full md:w-2/3 m-auto px-2 py-24 flex flex-col items-center">
+  <section
+    class="w-full m-auto xl:w-[1024px] px-4 py-24 flex flex-col items-center"
+  >
     <BackButton client:load>
       <Icon name="mdi:arrow-u-left-top" class="min-w-6" />
     </BackButton>
@@ -34,8 +36,10 @@ const { Content } = await project.render();
         src={images[0]}
         alt={title}
         class="w-full object-cover rounded-lg"
+        width={992}
+        height={478}
       />
-      <div class="p-8 w-full md:w-2/3 mx-auto flex flex-col items-center">
+      <div class="mt-4 w-full mx-auto flex flex-col items-center">
         <div class="flex gap-1">
           {categories.map((category: Category) => <Chip category={category} />)}
         </div>
