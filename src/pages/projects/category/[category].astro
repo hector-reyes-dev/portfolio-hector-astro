@@ -40,7 +40,7 @@ const { text, lastWord } = await getLastWord(
     <div class="flex flex-wrap items-start">
       {
         projects.map((project) => {
-          const { images, title, description, icons, categories, size } =
+          const { images, title, description, icons, categories } =
             project.data;
 
           return (
@@ -50,7 +50,6 @@ const { text, lastWord } = await getLastWord(
               description={description}
               icons={icons}
               categories={categories}
-              size={size}
               slug={project.slug}
             />
           );
