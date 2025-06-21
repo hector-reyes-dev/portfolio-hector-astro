@@ -1,35 +1,29 @@
 ---
-import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import Chip from "@common/Chip.astro";
 import type { Category } from "@utils/getCategory";
-import type { ImageMetadata } from "astro";
+import ProjectImageSwitcher from "./ProjectImageSwitcher.tsx";
 
 interface Props {
-  cover: ImageMetadata;
+  images: string[];
   title: string;
   description: string;
   icons: string[];
   categories: Category[];
-  size: "big" | "small";
   slug: string;
 }
 
-const defaultProps = {
-  size: "small" as const,
-} satisfies Partial<Props>;
-
-const { cover, title, description, icons, categories, slug } = Astro.props;
+const { images, title, description, icons, categories, slug } = Astro.props;
 ---
 
 <article class="w-full md:w-1/2 md:block mb-6 p-4" transition:name={title}>
-  <figure class="relative mb-2 rounded-xl overflow-hidden">
-    <div class="absolute m-1 bottom-1 left-1 flex gap-1">
+  <div class="relative mb-2 rounded-xl overflow-hidden">
+    <div class="absolute m-1 bottom-1 left-1 flex gap-1 z-10">
       {categories.map((category: Category) => <Chip category={category} />)}
     </div>
-    <Image class="object-cover rounded-lg" src={cover} alt={title} />
-  </figure>
+    <ProjectImageSwitcher client:load images={images} alt={title} />
+  </div>
   <div class="px-2 flex-col justify-start text-black">
     <div class="flex items-center justify-start gap-4">
       <h3 class="text-2xl mb-2 font-bold line-clamp-1">

@@ -1,5 +1,5 @@
 ---
-cover: "../../assets/projects/food-mood-project.webp"
+images: ["/assets/projects/food-mood-project.webp"]
 title: "Food Mood UI Kit"
 description: "Aplicación móvil de recetas de cocina y electrodomésticos."
 href: "https://www.behance.net/gallery/157838043/FoodMood-App"
@@ -12,7 +12,6 @@ icons:
     "simple-icons:notion",
   ]
 categories: ["main", "front-end", "design"]
-size: "big"
 ---
 
 Desarrollo de la aplicación móvil **FoodMood**, que ofrece recetas de cocina mediante consumo de APIs. Creé una interfaz UI moderna y desarrollé la aplicación en **NextJS**, asegurando una experiencia fluida y receptiva.

@@ -20,7 +20,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const project = Astro.props;
-const { cover, title, description, categories, icons, href } = project.data;
+const { images, title, description, categories, icons, href } = project.data;
 const { Content } = await project.render();
 ---
 
@@ -30,7 +30,11 @@ const { Content } = await project.render();
       <Icon name="mdi:arrow-u-left-top" class="min-w-6" />
     </BackButton>
     <main class="m-auto" transition:name={title}>
-      <Image src={cover} alt={title} class="w-full object-cover rounded-lg" />
+      <Image
+        src={images[0]}
+        alt={title}
+        class="w-full object-cover rounded-lg"
+      />
       <div class="p-8 w-full md:w-2/3 mx-auto flex flex-col items-center">
         <div class="flex gap-1">
           {categories.map((category: Category) => <Chip category={category} />)}
