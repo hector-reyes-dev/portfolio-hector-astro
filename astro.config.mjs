@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import icon from "astro-icon";
-import netlify from "@astrojs/netlify/server";
+import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 
 // https://astro.build/config
