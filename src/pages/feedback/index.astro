@@ -1,0 +1,9 @@
+---
+import { sql } from "../../lib/neon";
+
+const response = await sql`SELECT NOW() as current_time`;
+const currentTime = response[0].current_time;
+---
+
+<h1>Current Time</h1>
+<p>The time is: {currentTime}</p>
