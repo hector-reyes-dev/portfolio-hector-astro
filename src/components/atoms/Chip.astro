@@ -1,0 +1,23 @@
+---
+import { getCategory } from "@lib/content/getCategory";
+import type { Category } from "@lib/content/getCategory";
+
+interface Props {
+  category: Category;
+  label?: string;
+}
+
+const { category, label } = Astro.props;
+
+const text = await getCategory(category);
+---
+
+<a href={`/projects/category/${category}`} class="chip">
+  {label ? label : text}
+</a>
+
+<style>
+  .chip {
+    @apply py-1 px-3 rounded-md text-xs backdrop-blur-sm bg-opacity-20 bg-white dark:bg-black text-black dark:text-light shadow-sm border border-light-gray no-underline;
+  }
+</style>

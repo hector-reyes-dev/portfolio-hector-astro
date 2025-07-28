@@ -4,11 +4,11 @@ import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { Icon } from "astro-icon/components";
 
-import Layout from "@common/Layout.astro";
-import Chip from "@common/Chip.astro";
-import Button from "@common/Button.astro";
-import { BackButton } from "@common/BackButton";
-import type { Category } from "@utils/getCategory";
+import Layout from "@layouts/MainLayout.astro";
+import Chip from "@atoms/Chip.astro";
+import Button from "@atoms/Button.astro";
+import { BackButton } from "@molecules/BackButton";
+import type { Category } from "@lib/content/getCategory";
 
 export const getStaticPaths = (async () => {
   const projects = await getCollection("projects");
@@ -28,7 +28,7 @@ const { Content } = await project.render();
   <section
     class="w-full m-auto xl:w-[1024px] px-4 py-24 flex flex-col items-center"
   >
-    <BackButton client:load>
+    <BackButton client:visible>
       <Icon name="mdi:arrow-u-left-top" class="min-w-6" />
     </BackButton>
     <main class="m-auto" transition:name={title}>

@@ -1,9 +1,9 @@
 ---
 import { sql } from "../lib/neon";
-import Layout from "@common/Layout.astro";
+import Layout from "@layouts/MainLayout.astro";
 import FeedbackTable, {
   type FeedbackRow,
-} from "../modules/common/Feedback/FeedbackTable";
+} from "@features/feedback-system/FeedbackTable";
 
 export const prerender = false;
 
