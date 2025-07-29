@@ -19,12 +19,10 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-export const prerender = true; // Asegura que las rutas se pre-rendericen correctamente
+export const prerender = true;
 
 const project = Astro.props;
 
-// Verifica si el proyecto es válido antes de intentar acceder a sus propiedades
-// Esto es crucial para evitar errores si se accede a una URL no válida en producción
 if (!project || Object.keys(project).length === 0) {
   return Astro.redirect("/404");
 }

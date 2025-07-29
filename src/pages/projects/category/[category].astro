@@ -1,7 +1,6 @@
 ---
 import type { GetStaticPaths } from "astro";
 
-
 import Layout from "@layouts/MainLayout.astro";
 import ProjectGrid from "@organisms/ProjectGrid.astro";
 import CategoryChips from "@organisms/CategoryChips.astro";
@@ -20,6 +19,8 @@ export const getStaticPaths = (async () => {
     props: { category },
   }));
 }) satisfies GetStaticPaths;
+
+export const prerender = true;
 
 const { category } = Astro.props;
 
