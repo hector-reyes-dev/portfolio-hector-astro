@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Chip from "@atoms/Chip.astro";
+
+const { cover, title, href, anchorLabel, label } = Astro.props;
+---
+
+<article class="rounded-lg bg-light max-w-xs overflow-hidden">
+  <figure>
+    <Image src={cover} alt={title} />
+  </figure>
+  <div class="mt-[-2rem] px-4 pb-4">
+    <Chip category="chip" label={label} />
+    <h3 class="my-3 text-2xl font-bold line-clamp-2 dark:text-black">
+      {title}
+    </h3>
+    {
+      href === "#" ? (
+        <p class="text-gray">{anchorLabel}</p>
+      ) : (
+        <a href={href} class="text-red flex items-center hover:underline">
+          <Icon name="mdi:link" class="text-lg mr-1" />
+          <span class="text-red">{anchorLabel}</span>
+        </a>
+      )
+    }
+  </div>
+</article>

@@ -1,0 +1,24 @@
+---
+import { getLastWord } from "@lib/utils/getLastWord";
+
+export interface Props {
+  headline: string;
+  subtitle: string;
+}
+
+const { headline, subtitle } = Astro.props;
+const { text, lastWord } = await getLastWord(headline);
+---
+
+<div class="w-full flex flex-col items-start sm:items-center mb-4">
+  <span class="uppercase text-gray tracking-widest">{subtitle}</span>
+  <h2 class="headline">
+    {text}<span class="text-red"> {lastWord}</span>
+  </h2>
+</div>
+
+<style>
+  .headline {
+    @apply mb-2 text-3xl md:text-4xl text-black dark:text-white font-bold text-left sm:text-center;
+  }
+</style>

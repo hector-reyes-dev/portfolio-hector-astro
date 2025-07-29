@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "@atoms/Button.astro";
+---
+
+<div class="w-full py-4 sm:py-8 mb-20 flex flex-col items-center">
+  <span class={`phrase text-main leading-snug text-base sm:text-3xl`}
+    >Todo lo que necesitas para</span
+  >
+  <span
+    class={`phrase text-main leading-snug font-extrabold text-2xl mb-8 sm:text-3xl`}
+    >un sitio web de excelencia</span
+  >
+  <Button
+    type="text"
+    name="Descargar CV"
+    href="https://drive.google.com/file/d/1AWAcMYN_aGmLEJawxdAMC93twmH3bJ9Q/view?usp=sharing"
+    target="_blank"
+  >
+    <Icon name="mdi:file-download" class="text-white min-w-6" />
+    <span class="btn-label">Descargar CV</span>
+  </Button>
+</div>
+
+<style>
+  .phrase {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .main {
+    background: -webkit-linear-gradient(
+      45deg,
+      theme("colors.red"),
+      theme("colors.orange-light")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .purple {
+    background: -webkit-linear-gradient(
+      45deg,
+      theme("colors.purple"),
+      theme("colors.purple-light")
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

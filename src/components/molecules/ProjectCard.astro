@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+
+import Chip from "../atoms/Chip.astro";
+import type { Category } from "@lib/content/getCategory";
+import ProjectImageSwitcher from "@features/project-gallery/ProjectImageSwitcher.tsx";
+
+interface Props {
+  images: string[];
+  title: string;
+  description: string;
+  icons: string[];
+  categories: Category[];
+  slug: string;
+}
+
+const { images, title, description, icons, categories, slug } = Astro.props;
+---
+
+<article class="w-full md:w-1/2 md:block mb-6 p-4" transition:name={title}>
+  <div class="relative mb-2 rounded-xl overflow-hidden">
+    <div class="absolute m-1 bottom-1 left-1 flex gap-1 z-10">
+      {categories.map((category: Category) => <Chip category={category} />)}
+    </div>
+    <ProjectImageSwitcher client:visible images={images} alt={title} />
+  </div>
+  <div class="px-2 flex-col justify-start text-black">
+    <div class="flex items-center justify-start gap-4">
+      <h3 class="text-2xl mb-2 font-bold line-clamp-1">
+        {title}
+      </h3>
+      <div class="my-1 flex gap-2">
+        {
+          icons.map((icon) => (
+            <Icon name={icon} class="text-light-gray text-lg" />
+          ))
+        }
+      </div>
+    </div>
+    <p class="text-base line-clamp-2">
+      {description}
+    </p>
+    <a href={`/projects/${slug}`} class="mt-2 flex items-center text-main">
+      <Icon name="mdi:link" class="text-lg mr-1" />
+      <span> Ver proyecto </span>
+    </a>
+  </div>
+</article>
+
+<style></style>

@@ -6,6 +6,14 @@ Deploy: [Héctor Creative Dev](https://hectorcreative.dev/)
 Personal Portfolio built with Astro and Tailwind. Hello! I'm a Front-End Developer with experience in UI/UX design and web development. I use tools like Figma, SASS, Angular, React, and more. I'm passionate about quality, creativity, and accessibility. I'm ready to bring value to exceptional projects. Let's make it happen together!
 
 
+## Project Structure
+
+The codebase follows a modern component-driven architecture:
+
+- **src/components** – reusable UI building blocks organized by atomic design (atoms, molecules, organisms, layouts).
+- **src/features** – self-contained features that bundle UI and logic such as the theme switcher or feedback system.
+- **src/lib** – shared utilities and API helpers.
+
 ## Clone Project 🚀
 
 These instructions will allow you to obtain a working copy of the project on your local machine for educational purposes.
@@ -35,6 +43,16 @@ Run the project with:
 ```
 npm run dev
 ```
+
+## Environment Configuration
+
+Copy `.env.example` to `.env` and provide your credentials:
+
+```
+NEON_DATABASE_URL=
+```
+
+This variable sets the connection string for the database used by the feedback feature.
 
 ## Built with 🛠️
 

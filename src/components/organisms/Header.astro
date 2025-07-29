@@ -1,0 +1,49 @@
+---
+import LogoIcon from "../atoms/LogoIcon.astro";
+import Nav from "../molecules/Nav.astro";
+import SocialMediaIcons from "../molecules/SocialMediaIcons.astro";
+import ThemeToggle from "@features/theme-switcher/ThemeToggle.astro";
+import { getLastWord } from "@lib/utils/getLastWord";
+
+const { title } = Astro.props;
+const { text, lastWord } = await getLastWord(title);
+---
+
+<header>
+  <div class="header-container">
+    <a href="/" class="header-title">
+      <LogoIcon color="main" width={40} />
+      <h2>
+        {text}
+        <span>{lastWord}</span>
+      </h2>
+    </a>
+    <div class="nav-container">
+      <Nav />
+      <SocialMediaIcons />
+      <ThemeToggle />
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    @apply w-full mb-10 fixed z-50;
+  }
+
+  .header-container {
+    @apply mx-auto w-full pt-6 pb-4 px-12 xl:w-[1280px] flex flex-col lg:flex-row items-center justify-around rounded-b-xl backdrop-blur-lg bg-white bg-opacity-30 dark:bg-dark-surface dark:bg-opacity-30 transition-colors;
+  }
+
+  .header-title {
+    @apply font-bold mb-4 lg:mb-0 flex gap-2 items-center justify-between whitespace-nowrap;
+  }
+
+  .header-title span {
+    @apply text-red dark:text-dark-main whitespace-nowrap;
+  }
+
+  .nav-container {
+    @apply w-full flex justify-center gap-4 md:justify-around items-center;
+  }
+</style>

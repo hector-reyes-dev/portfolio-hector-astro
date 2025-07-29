@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import SectionTitle from "@atoms/SectionTitle.astro";
+import ServiceCard from "../molecules/ServiceCard.astro";
+
+const services = await getCollection("services", ({ id }) => {
+  return id.startsWith("main/");
+});
+---
+
+<section id="servicios" class="w-full p-4 mb-20">
+  <SectionTitle
+    headline="Así puedo aportar a tus proyectos"
+    subtitle="servicios"
+  />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {
+      services.map(({ data }: any) => (
+        <ServiceCard
+          iconName={data?.icon}
+          title={data?.title}
+          description={data?.description}
+          subServices={data?.subServices}
+        />
+      ))
+    }
+  </div>
+</section>

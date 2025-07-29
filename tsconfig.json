@@ -8,11 +8,13 @@
       "@styles/*": ["src/styles/*"],
       "@assets/*": ["src/assets/*"],
       "@constants/*": ["src/constants/*"],
-      "@common/*": ["src/modules/common/*"],
-      "@home/*": ["src/modules/home/*"],
-      "@projects/*": ["src/modules/projects/*"],
-      "@promo/*": ["src/modules/promo/*"],
-      "@utils/*": ["src/utils/*"]
+      "@components/*": ["src/components/*"],
+      "@lib/*": ["src/lib/*"],
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@organisms/*": ["src/components/organisms/*"],
+      "@layouts/*": ["src/components/layouts/*"],
+      "@features/*": ["src/features/*"]
     }
   }
 }
