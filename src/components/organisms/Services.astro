@@ -3,9 +3,7 @@ import { getCollection } from "astro:content";
 import SectionTitle from "@atoms/SectionTitle.astro";
 import ServiceCard from "../molecules/ServiceCard.astro";
 
-const services = await getCollection("services", ({ id }) => {
-  return id.startsWith("main/");
-});
+const services = await getCollection("services");
 ---
 
 <section id="servicios" class="w-full p-4 mb-20">
