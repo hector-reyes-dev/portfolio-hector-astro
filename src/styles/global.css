@@ -45,8 +45,8 @@
 
 @font-face {
   font-family: "Eudoxus Sans";
-  src: url("/fonts/EudoxusSans-Regular.woff2") format("woff2");
-  font-weight: normal;
+  src: url("/fonts/EudoxusSans-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -61,8 +61,32 @@
 
 @font-face {
   font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
   src: url("/fonts/EudoxusSans-Bold.woff2") format("woff2");
   font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Eudoxus Sans";
+  src: url("/fonts/EudoxusSans-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
