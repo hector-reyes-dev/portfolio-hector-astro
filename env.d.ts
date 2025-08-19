@@ -1,6 +1,4 @@
-interface ImportMetaEnv {
-  readonly NEON_DATABASE_URL: string;
-}
+interface ImportMetaEnv {}
 
 interface ImportMeta {
   readonly env: ImportMetaEnv;

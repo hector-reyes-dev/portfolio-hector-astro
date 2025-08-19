@@ -5,7 +5,6 @@ import Head from "./Head.astro";
 import Background from "./Background.astro";
 import Header from "../organisms/Header.astro";
 import Footer from "../organisms/Footer.astro";
-import FloatingButton from "@features/feedback-system/FloatingButton.tsx";
 
 import "@styles/global.css";
 
@@ -21,6 +20,5 @@ const { title, description, headerTitle } = Astro.props;
     <Header title={headerTitle} />
     <slot />
     <Footer />
-    <FloatingButton client:idle />
   </body>
 </html>

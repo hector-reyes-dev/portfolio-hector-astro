@@ -15,7 +15,6 @@
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/mdi": "^1.1.66",
     "@iconify-json/simple-icons": "^1.1.104",
-    "@neondatabase/serverless": "^1.0.1",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
