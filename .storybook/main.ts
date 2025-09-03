@@ -21,6 +21,20 @@ const config: StorybookConfig = {
     autodocs: 'tag',
   },
   staticDirs: ['../public'],
+  // Configuration for subdirectory deployment
+  managerHead: (head) => `
+    ${head}
+    <meta name="description" content="Design System - Hector Creative Portfolio">
+    <meta name="keywords" content="design system, storybook, components, react, astro">
+    <meta property="og:title" content="Design System - Hector Creative">
+    <meta property="og:description" content="Explore the component library and design tokens">
+    <meta property="og:image" content="/og-design-system.jpg">
+  `,
+  // Performance optimizations for production
+  features: {
+    modernInlineRender: true,
+    buildStoriesJson: true
+  },
   typescript: {
     check: false,
     reactDocgen: 'react-docgen-typescript',

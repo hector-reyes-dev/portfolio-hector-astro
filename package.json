@@ -6,10 +6,11 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:storybook": "storybook build -o dist/storybook-static --force-build-preview",
+    "build:all": "npm run build && npm run build:storybook",
     "preview": "astro preview",
     "astro": "astro",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@astrojs/partytown": "^2.1.3",

@@ -1,0 +1,80 @@
+# Netlify configuration for Astro + Storybook deployment
+# Portfolio Hector Creative - hectorcreative.dev
+
+[build]
+  # Build command that creates both Astro site and Storybook
+  command = "npm run build:all"
+  # Output directory containing both sites
+  publish = "dist"
+  
+  # Environment variables for build
+  [build.environment]
+    NODE_VERSION = "18"
+    NPM_FLAGS = "--legacy-peer-deps"
+
+# Redirect rules for Storybook subdirectory
+[[redirects]]
+  # Redirect /storybook to /storybook-static/ for the actual Storybook build
+  from = "/storybook"
+  to = "/storybook-static/"
+  status = 301
+
+[[redirects]]
+  # Handle Storybook static assets
+  from = "/storybook-static/*"
+  to = "/storybook-static/:splat"
+  status = 200
+
+# Headers for better performance and security
+[[headers]]
+  # Apply to all files
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Performance headers
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  # Specific headers for Storybook
+  for = "/storybook-static/*"
+  [headers.values]
+    # Allow iframe embedding for Storybook (needed for component preview)
+    X-Frame-Options = "SAMEORIGIN"
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  # HTML files should not be cached aggressively
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Edge Functions configuration (if needed in the future)
+[functions]
+  directory = "netlify/functions"
+
+# Dev server configuration for local development
+[dev]
+  command = "npm run dev"
+  port = 4321
+  targetPort = 4321
+  publish = "dist"
+
+# No build plugins needed for this Astro + Storybook setup
+
+# Context-specific configurations
+[context.production]
+  [context.production.environment]
+    NODE_ENV = "production"
+
+[context.deploy-preview]
+  # Preview deployments also include Storybook
+  command = "npm run build:all"
+
+[context.branch-deploy]
+  # Branch deployments also include Storybook
+  command = "npm run build:all"

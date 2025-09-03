@@ -1,0 +1,199 @@
+---
+// Storybook redirect page for development
+// In production, this will be handled by Netlify redirects
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Storybook - Design System</title>
+    <meta name="description" content="Design System - Hector Creative Portfolio">
+    <meta name="keywords" content="design system, storybook, components, react, astro">
+    <meta property="og:title" content="Design System - Hector Creative">
+    <meta property="og:description" content="Explore the component library and design tokens">
+    <meta property="og:image" content="/og-design-system.jpg">
+    
+    <!-- Styling for the redirect page -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Eudoxus Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #ff0844 0%, #6b42df 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .container {
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .logo {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+      
+      .options {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+      }
+      
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 32px;
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+      
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .btn-primary {
+        background: rgba(255, 255, 255, 0.9);
+        color: #1e1e29;
+      }
+      
+      .btn-primary:hover {
+        background: white;
+        color: #1e1e29;
+      }
+      
+      .note {
+        margin-top: 30px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      
+      .note strong {
+        color: #ffb199;
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          padding: 30px 20px;
+        }
+        
+        h1 {
+          font-size: 2rem;
+        }
+        
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81v8.37C2 19.83 4.17 22 7.81 22h8.37c3.64 0 5.81-2.17 5.81-5.81V7.81C22 4.17 19.83 2 16.19 2zM12 17.5c-3.04 0-5.5-2.46-5.5-5.5S8.96 6.5 12 6.5s5.5 2.46 5.5 5.5-2.46 5.5-5.5 5.5z"/>
+        </svg>
+      </div>
+      
+      <h1>Storybook</h1>
+      <p>
+        El Design System está disponible como proyecto independiente durante el desarrollo. 
+        Elige cómo quieres acceder a Storybook:
+      </p>
+      
+      <div class="options">
+        <a href="http://localhost:6006" target="_blank" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          Abrir Storybook (Dev Server)
+        </a>
+        
+        <a href="/design-system" class="btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+          Ver información del Design System
+        </a>
+      </div>
+      
+      <div class="note">
+        <strong>Nota:</strong> En desarrollo, ejecuta <code>npm run storybook</code> en otra terminal 
+        para acceder a Storybook en el puerto 6006. En producción, estará disponible directamente en <code>/storybook</code>.
+      </div>
+    </div>
+
+    <script>
+      // Check if Storybook dev server is running
+      async function checkStorybookServer() {
+        try {
+          const response = await fetch('http://localhost:6006', { mode: 'no-cors' });
+          // If we get here, the server is running
+          console.log('Storybook dev server is running');
+        } catch (error) {
+          // Server is not running, show a note
+          const note = document.querySelector('.note');
+          note.innerHTML = `
+            <strong>¿Storybook no está ejecutándose?</strong><br>
+            Ejecuta <code>npm run storybook</code> en otra terminal para iniciarlo en el puerto 6006.
+            <br><br>
+            <strong>En producción:</strong> Storybook estará disponible directamente en <code>/storybook</code> 
+            sin necesidad de servidor separado.
+          `;
+        }
+      }
+
+      // Check server status when page loads
+      checkStorybookServer();
+    </script>
+  </body>
+</html>
