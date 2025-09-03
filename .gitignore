@@ -22,3 +22,5 @@ pnpm-debug.log*
 
 # AI rules
 .trae
+*storybook.log
+storybook-static

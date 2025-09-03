@@ -1,0 +1,175 @@
+/**
+ * Design Tokens - CSS Custom Properties
+ * Single source of truth for all design values across the application
+ * Compatible with Storybook and scalable for future updates
+ */
+
+:root {
+  /* === COLOR TOKENS === */
+  
+  /* Primary Colors */
+  --color-main: #ff0844;
+  --color-main-light: #ff3869;
+  --color-red: #ff0844;
+  --color-red-light: #ff3869;
+  
+  /* Secondary Colors */
+  --color-orange: #ff8c69;
+  --color-orange-light: #ffb199;
+  --color-purple: #6b42df;
+  --color-purple-light: #987aef;
+  --color-blue: #6bb5f9;
+  
+  /* Neutral Colors */
+  --color-white: #fbfbfb;
+  --color-light: #efefef;
+  --color-light-gray: #a6a6b5;
+  --color-gray: #878791;
+  --color-dark-gray: #484753;
+  --color-black: #1e1e29;
+  
+  /* === SPACING TOKENS === */
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+  --spacing-4xl: 6rem;      /* 96px */
+  
+  /* === TYPOGRAPHY TOKENS === */
+  --font-family-sans: "Eudoxus Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --font-size-xs: 0.75rem;      /* 12px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 1rem;       /* 16px */
+  --font-size-lg: 1.125rem;     /* 18px */
+  --font-size-xl: 1.25rem;      /* 20px */
+  --font-size-2xl: 1.5rem;      /* 24px */
+  --font-size-3xl: 1.875rem;    /* 30px */
+  --font-size-4xl: 2.25rem;     /* 36px */
+  --font-size-5xl: 3rem;        /* 48px */
+  
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* === BORDER RADIUS TOKENS === */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;    /* 2px */
+  --radius-md: 0.375rem;    /* 6px */
+  --radius-lg: 0.5rem;      /* 8px */
+  --radius-xl: 0.75rem;     /* 12px */
+  --radius-2xl: 1rem;       /* 16px */
+  --radius-3xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+  
+  /* === SHADOW TOKENS === */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Custom Component Shadows */
+  --shadow-main: 0px 4px 20px rgba(255, 8, 68, 0.5);
+  --shadow-main-hover: 0px 2px 5px rgba(255, 8, 68, 0.5);
+  --shadow-purple: 0px 4px 20px rgba(107, 66, 223, 0.5);
+  --shadow-purple-hover: 0px 2px 5px rgba(107, 66, 223, 0.5);
+  
+  /* === GRADIENT TOKENS === */
+  --gradient-main: linear-gradient(135deg, var(--color-main) 0%, var(--color-main-light) 100%);
+  --gradient-purple: linear-gradient(135deg, var(--color-purple) 0%, var(--color-purple-light) 100%);
+  --gradient-orange: linear-gradient(135deg, var(--color-orange) 0%, var(--color-orange-light) 100%);
+  
+  /* === ANIMATION TOKENS === */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+  
+  /* === BREAKPOINT REFERENCE (for documentation) === */
+  /* These are used in Tailwind config, not as CSS variables */
+  /* 
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  */
+}
+
+/* === DARK THEME TOKENS === */
+.dark {
+  /* Dark theme color overrides */
+  --color-main: #ff3869;
+  --color-background: #121218;
+  --color-surface: #1e1e29;
+  --color-text: #fbfbfb;
+  --color-text-secondary: #a6a6b5;
+  --color-border: #484753;
+  --color-accent: #987aef;
+  
+  /* Update shadows for dark theme */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* === CSS VARIABLES FOR COMPONENT STYLES === */
+:root {
+  /* These mirror the gradients used in your existing components */
+  --main-gradient: var(--gradient-main);
+  --purple-gradient: var(--gradient-purple);
+  --orange-gradient: var(--gradient-orange);
+}
+
+/* === UTILITY CLASSES FOR STORYBOOK === */
+.sb-design-token {
+  font-family: var(--font-family-sans);
+}
+
+.sb-color-swatch {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  margin-right: var(--spacing-sm);
+}
+
+.sb-typography-sample {
+  font-family: var(--font-family-sans);
+  margin: var(--spacing-md) 0;
+}
+
+/* === COMPONENT TOKEN MAPPING === */
+/* Button Component Tokens */
+.btn-tokens {
+  --btn-padding: var(--spacing-md);
+  --btn-radius: var(--radius-3xl);
+  --btn-font-size: var(--font-size-xl);
+  --btn-font-weight: var(--font-weight-semibold);
+  --btn-transition: var(--transition-normal);
+}
+
+/* Card Component Tokens */
+.card-tokens {
+  --card-padding: var(--spacing-lg);
+  --card-radius: var(--radius-xl);
+  --card-shadow: var(--shadow-md);
+  --card-background: var(--color-white);
+}
+
+.dark .card-tokens {
+  --card-background: var(--color-surface);
+}

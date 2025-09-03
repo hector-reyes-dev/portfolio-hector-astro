@@ -1,0 +1,181 @@
+/**
+ * Storybook CSS Configuration
+ * Imports all necessary styles for proper rendering in Storybook environment
+ */
+
+/* Import design tokens first */
+@import '../src/styles/design-tokens.css';
+
+/* Import project global styles */
+@import '../src/styles/global.css';
+
+/* Import Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === STORYBOOK-SPECIFIC STYLES === */
+
+/* Ensure proper font loading in Storybook environment */
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Storybook canvas background compatibility */
+.sb-show-main {
+  background-color: var(--color-background);
+}
+
+/* Dark theme handling for Storybook UI */
+.dark .sb-show-main {
+  background-color: var(--color-background);
+}
+
+/* Ensure proper text colors in stories */
+.sbdocs-content {
+  color: var(--color-text);
+}
+
+.dark .sbdocs-content {
+  color: var(--color-text);
+}
+
+/* Custom story container styling */
+.sb-story-wrapper {
+  padding: 1rem;
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+/* Override default Storybook story background */
+.sb-story {
+  background-color: var(--color-background);
+}
+
+/* Ensure proper component display */
+.sb-story * {
+  color: inherit;
+}
+
+/* Fix for addon panels in dark mode */
+.dark .sb-addon-panel {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+/* Custom styles for component showcase */
+.storybook-component {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+/* Responsive story container */
+@media (max-width: 768px) {
+  .sb-story-wrapper {
+    padding: 0.5rem;
+  }
+}
+
+/* === COMPONENT-SPECIFIC OVERRIDES === */
+
+/* Button component showcase */
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: pre;
+  padding: 0.75rem;
+  border-radius: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: all 200ms ease-in-out;
+}
+
+/* Ensure gradients work in Storybook */
+.btn.main {
+  color: var(--color-white);
+  background: var(--main-gradient);
+  box-shadow: var(--shadow-main);
+}
+
+.btn.purple {
+  color: var(--color-white);
+  background: var(--purple-gradient);
+  box-shadow: var(--shadow-purple);
+}
+
+/* Button variants */
+.btn.main-border {
+  color: var(--color-black);
+  background: var(--color-white);
+  border: 1px solid var(--color-red);
+  box-shadow: var(--shadow-main);
+}
+
+.btn.purple-border {
+  color: var(--color-black);
+  background: var(--color-white);
+  border: 1px solid var(--color-purple);
+  box-shadow: var(--shadow-purple);
+}
+
+.btn.red-light {
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-red-light) 100%);
+  box-shadow: var(--shadow-main);
+}
+
+/* Hover states */
+.btn.main:hover,
+.btn.main-border:hover,
+.btn.red-light:hover {
+  box-shadow: var(--shadow-main-hover);
+}
+
+.btn.purple:hover,
+.btn.purple-border:hover {
+  box-shadow: var(--shadow-purple-hover);
+}
+
+/* Text variant */
+.btn.text {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+/* === CHIP COMPONENT === */
+.chip {
+  @apply py-1 px-3 rounded-md text-xs backdrop-blur-sm bg-opacity-20 bg-white dark:bg-black text-black dark:text-light shadow-sm border border-light-gray no-underline transition-all duration-200;
+}
+
+.chip:hover {
+  @apply bg-opacity-30 shadow-md transform scale-105;
+}
+
+.chip:focus {
+  @apply outline-none ring-2 ring-main ring-opacity-50;
+}
+
+/* === SECTION TITLE COMPONENT === */
+.headline {
+  @apply mb-2 text-3xl md:text-4xl text-black dark:text-white font-bold text-left sm:text-center;
+}
+
+@media (max-width: 640px) {
+  .headline {
+    @apply text-2xl;
+  }
+}
+
+@media (min-width: 1024px) {
+  .headline {
+    @apply text-5xl;
+  }
+}
