@@ -22,3 +22,9 @@ pnpm-debug.log*
 
 # AI rules
 .trae
+.claude
+
+plans/
+
+# Local Netlify folder
+.netlify
