@@ -1,0 +1,123 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "./MainLayout.astro";
+import BlogMeta from "@molecules/BlogMeta.astro";
+import BlogNavigation from "@molecules/BlogNavigation.astro";
+import type { Category } from "@lib/content/getCategory";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  category: Category;
+  tags: string[];
+  pubDate: Date;
+  updatedDate?: Date;
+  content: string;
+  prevPost?: {
+    slug: string;
+    title: string;
+  };
+  nextPost?: {
+    slug: string;
+    title: string;
+  };
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  category,
+  tags,
+  pubDate,
+  updatedDate,
+  content,
+  prevPost,
+  nextPost,
+} = Astro.props;
+---
+
+<MainLayout title={`${title} | Blog`} description={description} headerTitle="Blog">
+  <main class="container mx-auto px-4 py-12 max-w-4xl">
+    <article class="prose prose-lg dark:prose-invert max-w-none">
+      <!-- Hero Image -->
+      <div class="relative w-full aspect-video rounded-2xl overflow-hidden mb-8 -mx-4 sm:mx-0">
+        <Image
+          src={image}
+          alt={imageAlt}
+          class="w-full h-full object-cover"
+          loading="eager"
+        />
+      </div>
+
+      <!-- Header -->
+      <header class="mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-black dark:text-dark-text mb-6 leading-tight">
+          {title}
+        </h1>
+
+        <p class="text-xl text-gray dark:text-dark-text-secondary mb-6">
+          {description}
+        </p>
+
+        <BlogMeta
+          pubDate={pubDate}
+          updatedDate={updatedDate}
+          category={category}
+          tags={tags}
+          content={content}
+        />
+      </header>
+
+      <!-- Content -->
+      <div class="prose-headings:text-black dark:prose-headings:text-dark-text prose-p:text-gray dark:prose-p:text-dark-text-secondary prose-a:text-main dark:prose-a:text-dark-main prose-strong:text-black dark:prose-strong:text-dark-text prose-code:text-main dark:prose-code:text-dark-main prose-pre:bg-black dark:prose-pre:bg-dark-surface">
+        <slot />
+      </div>
+    </article>
+
+    <!-- Navigation -->
+    <BlogNavigation prevPost={prevPost} nextPost={nextPost} />
+  </main>
+</MainLayout>
+
+<style>
+  /* Estilos adicionales para el contenido del blog */
+  article :global(h2) {
+    @apply mt-12 mb-4;
+  }
+
+  article :global(h3) {
+    @apply mt-8 mb-3;
+  }
+
+  article :global(p) {
+    @apply mb-4 leading-relaxed;
+  }
+
+  article :global(ul, ol) {
+    @apply mb-4;
+  }
+
+  article :global(li) {
+    @apply mb-2;
+  }
+
+  article :global(pre) {
+    @apply rounded-lg p-4 overflow-x-auto;
+  }
+
+  article :global(code) {
+    @apply text-sm;
+  }
+
+  article :global(blockquote) {
+    @apply border-l-4 border-main dark:border-dark-main pl-4 italic;
+  }
+
+  article :global(img) {
+    @apply rounded-lg;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths } from "astro";
+import MainLayout from "@layouts/MainLayout.astro";
+import SectionTitle from "@atoms/SectionTitle.astro";
+import CategoryChips from "@organisms/CategoryChips.astro";
+import BlogGrid from "@organisms/BlogGrid.astro";
+import { getCategory } from "@lib/content/getCategory";
+
+export const getStaticPaths = (async () => {
+  const categories = [
+    "desarrollo-web",
+    "frontend",
+    "backend",
+    "proyectos",
+    "tutoriales",
+    "reflexiones",
+  ];
+
+  return categories.map((category) => ({
+    params: { category },
+    props: { category },
+  }));
+}) satisfies GetStaticPaths;
+
+export const prerender = true;
+
+const { category } = Astro.props;
+const categoryData = getCategory(category);
+
+const categoryChips = [
+  { label: "Todos", value: "all" },
+  { label: "Desarrollo Web", value: "desarrollo-web" },
+  { label: "Frontend", value: "frontend" },
+  { label: "Backend", value: "backend" },
+  { label: "Proyectos", value: "proyectos" },
+  { label: "Tutoriales", value: "tutoriales" },
+  { label: "Reflexiones", value: "reflexiones" },
+];
+---
+
+<MainLayout
+  title={`${categoryData} | Blog`}
+  description={`Artículos de ${categoryData.toLowerCase()}`}
+  headerTitle="Blog"
+>
+  <main class="container mx-auto px-4 py-12">
+    <section class="mb-12 text-center max-w-3xl mx-auto">
+      <SectionTitle headline={categoryData} subtitle="Categoría" />
+    </section>
+
+    <section class="mb-8">
+      <CategoryChips categories={categoryChips} baseUrl="/blog/category" />
+    </section>
+
+    <section>
+      <BlogGrid category={category} />
+    </section>
+  </main>
+</MainLayout>

@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import MainLayout from "@layouts/MainLayout.astro";
+import SectionTitle from "@atoms/SectionTitle.astro";
+import BlogGrid from "@organisms/BlogGrid.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog", ({ data }) => {
+    return !data.draft;
+  });
+
+  // Obtener todos los tags únicos
+  const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag },
+  }));
+}) satisfies GetStaticPaths;
+
+export const prerender = true;
+
+const { tag } = Astro.props;
+---
+
+<MainLayout
+  title={`#${tag} | Blog`}
+  description={`Artículos etiquetados con ${tag}`}
+  headerTitle="Blog"
+>
+  <main class="container mx-auto px-4 py-12">
+    <section class="mb-12 text-center max-w-3xl mx-auto">
+      <SectionTitle headline={`#${tag}`} subtitle="Tag" />
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 mt-6 text-main dark:text-dark-main hover:underline"
+      >
+        ← Volver a todos los posts
+      </a>
+    </section>
+
+    <section>
+      <BlogGrid tag={tag} />
+    </section>
+  </main>
+</MainLayout>

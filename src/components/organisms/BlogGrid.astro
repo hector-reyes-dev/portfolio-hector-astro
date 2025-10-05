@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import BlogCard from "@molecules/BlogCard.astro";
+import Button from "@atoms/Button.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  category?: string;
+  tag?: string;
+  limit?: number;
+  showViewAll?: boolean;
+}
+
+const { category, tag, limit, showViewAll = false } = Astro.props;
+
+// Obtener todos los posts no borrador, ordenados por fecha
+let posts = await getCollection("blog", ({ data }) => {
+  return !data.draft;
+});
+
+// Filtrar por categoría si se especifica
+if (category) {
+  posts = posts.filter((post) => post.data.category === category);
+}
+
+// Filtrar por tag si se especifica
+if (tag) {
+  posts = posts.filter((post) => post.data.tags.includes(tag));
+}
+
+// Ordenar por fecha descendente
+posts = posts.sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+
+// Limitar cantidad si se especifica
+if (limit) {
+  posts = posts.slice(0, limit);
+}
+---
+
+<div class="flex flex-wrap items-start">
+  {
+    posts.map(async (post) => {
+      const { title, description, image, imageAlt, category, tags, pubDate } =
+        post.data;
+      const { Content } = await post.render();
+      const content = await post.body;
+
+      return (
+        <BlogCard
+          slug={post.slug}
+          title={title}
+          description={description}
+          image={image}
+          imageAlt={imageAlt}
+          category={category}
+          tags={tags}
+          pubDate={pubDate}
+          content={content}
+        />
+      );
+    })
+  }
+</div>
+
+{
+  posts.length === 0 && (
+    <div class="w-full text-center py-12">
+      <p class="text-gray dark:text-dark-text-secondary text-lg">
+        No hay posts disponibles en esta categoría.
+      </p>
+    </div>
+  )
+}
+
+{
+  showViewAll && posts.length > 0 && (
+    <div class="w-full flex items-center justify-center mt-4">
+      <Button type="text" name="blog" href="/blog">
+        <Icon name="mdi:notebook-outline" class="text-white min-w-6" />
+        <span class="btn-label">Ver todos los posts</span>
+      </Button>
+    </div>
+  )
+}

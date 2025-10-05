@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  content: string;
+}
+
+const { content } = Astro.props;
+
+// Cálculo estándar: 200 palabras por minuto
+const words = content.split(/\s+/).length;
+const readingTime = Math.ceil(words / 200);
+---
+
+<div
+  class="flex items-center gap-1 text-sm text-gray dark:text-dark-text-secondary"
+>
+  <Icon name="mdi:clock-outline" class="h-4 w-4" />
+  <span>{readingTime} min de lectura</span>
+</div>

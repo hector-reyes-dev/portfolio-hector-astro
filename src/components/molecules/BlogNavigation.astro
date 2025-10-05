@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  prevPost?: {
+    slug: string;
+    title: string;
+  };
+  nextPost?: {
+    slug: string;
+    title: string;
+  };
+}
+
+const { prevPost, nextPost } = Astro.props;
+---
+
+<nav class="flex justify-between gap-4 mt-12 pt-8 border-t border-light-gray/20 dark:border-dark-border">
+  {
+    prevPost ? (
+      <a
+        href={`/blog/${prevPost.slug}`}
+        class="group flex-1 flex items-center gap-3 p-4 rounded-lg bg-light dark:bg-dark-surface hover:bg-main/5 dark:hover:bg-dark-main/5 transition-colors"
+      >
+        <Icon
+          name="mdi:chevron-left"
+          class="text-2xl text-main dark:text-dark-main flex-shrink-0"
+        />
+        <div class="text-left">
+          <div class="text-xs text-gray dark:text-dark-text-secondary mb-1">
+            Anterior
+          </div>
+          <div class="text-sm font-medium text-black dark:text-dark-text group-hover:text-main dark:group-hover:text-dark-main transition-colors line-clamp-1">
+            {prevPost.title}
+          </div>
+        </div>
+      </a>
+    ) : (
+      <div class="flex-1" />
+    )
+  }
+
+  {
+    nextPost ? (
+      <a
+        href={`/blog/${nextPost.slug}`}
+        class="group flex-1 flex items-center gap-3 p-4 rounded-lg bg-light dark:bg-dark-surface hover:bg-main/5 dark:hover:bg-dark-main/5 transition-colors"
+      >
+        <div class="text-right flex-1">
+          <div class="text-xs text-gray dark:text-dark-text-secondary mb-1">
+            Siguiente
+          </div>
+          <div class="text-sm font-medium text-black dark:text-dark-text group-hover:text-main dark:group-hover:text-dark-main transition-colors line-clamp-1">
+            {nextPost.title}
+          </div>
+        </div>
+        <Icon
+          name="mdi:chevron-right"
+          class="text-2xl text-main dark:text-dark-main flex-shrink-0"
+        />
+      </a>
+    ) : (
+      <div class="flex-1" />
+    )
+  }
+</nav>

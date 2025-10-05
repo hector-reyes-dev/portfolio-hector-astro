@@ -1,0 +1,54 @@
+---
+import DateDisplay from "@atoms/DateDisplay.astro";
+import ReadingTime from "@atoms/ReadingTime.astro";
+import Chip from "@atoms/Chip.astro";
+import type { Category } from "@lib/content/getCategory";
+
+interface Props {
+  pubDate: Date;
+  updatedDate?: Date;
+  category: Category;
+  tags: string[];
+  content: string;
+}
+
+const { pubDate, updatedDate, category, tags, content } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 py-4 border-y border-light-gray/20 dark:border-dark-border">
+  <div class="flex flex-wrap items-center gap-4">
+    <DateDisplay date={pubDate} showIcon />
+    <ReadingTime content={content} />
+  </div>
+
+  {
+    updatedDate && (
+      <div class="text-sm text-gray dark:text-dark-text-secondary italic">
+        Actualizado: <DateDisplay date={updatedDate} />
+      </div>
+    )
+  }
+
+  <div class="flex flex-wrap items-center gap-2">
+    <span class="text-sm font-medium text-gray dark:text-dark-text-secondary">Categoría:</span>
+    <Chip category={category} baseUrl="/blog/category" />
+  </div>
+
+  {
+    tags.length > 0 && (
+      <div class="flex flex-wrap items-start gap-2">
+        <span class="text-sm font-medium text-gray dark:text-dark-text-secondary">Tags:</span>
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <a
+              href={`/blog/tag/${tag}`}
+              class="px-3 py-1 text-xs rounded-full bg-light dark:bg-dark-surface text-gray dark:text-dark-text-secondary hover:bg-main/10 dark:hover:bg-dark-main/10 hover:text-main dark:hover:text-dark-main transition-colors"
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</div>

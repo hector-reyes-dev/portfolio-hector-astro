@@ -5,6 +5,12 @@ export const categoriesList = {
   design: "Diseño",
   main: "Destacado",
   chip: "chiplabel",
+  "desarrollo-web": "Desarrollo Web",
+  frontend: "Frontend",
+  backend: "Backend",
+  proyectos: "Proyectos",
+  tutoriales: "Tutoriales",
+  reflexiones: "Reflexiones",
 } as const;
 
 export type Category = keyof typeof categoriesList;

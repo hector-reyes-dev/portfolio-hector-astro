@@ -1,0 +1,44 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import SectionTitle from "@atoms/SectionTitle.astro";
+import CategoryChips from "@organisms/CategoryChips.astro";
+import BlogGrid from "@organisms/BlogGrid.astro";
+
+const categories = [
+  { label: "Todos", value: "all" },
+  { label: "Desarrollo Web", value: "desarrollo-web" },
+  { label: "Frontend", value: "frontend" },
+  { label: "Backend", value: "backend" },
+  { label: "Proyectos", value: "proyectos" },
+  { label: "Tutoriales", value: "tutoriales" },
+  { label: "Reflexiones", value: "reflexiones" },
+];
+---
+
+<MainLayout
+  title="Blog | Héctor Reyes"
+  description="Artículos sobre desarrollo web, diseño, product engineering y mi journey como creador digital."
+  headerTitle="Blog"
+>
+  <main class="container mx-auto px-4 py-12">
+    <!-- Header Section -->
+    <section class="mb-12 text-center max-w-3xl mx-auto">
+      <SectionTitle headline="Blog" subtitle="Artículos y tutoriales" />
+      <p class="text-lg text-gray dark:text-dark-text-secondary mt-4">
+        Comparto mi experiencia en desarrollo web, diseño, product engineering
+        y mi journey como creador digital. Tutoriales prácticos, casos de
+        estudio y reflexiones sobre tecnología.
+      </p>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="mb-8">
+      <CategoryChips categories={categories} baseUrl="/blog/category" />
+    </section>
+
+    <!-- Blog Grid -->
+    <section>
+      <BlogGrid />
+    </section>
+  </main>
+</MainLayout>

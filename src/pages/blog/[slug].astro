@@ -1,0 +1,68 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import BlogLayout from "@layouts/BlogLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const posts = await getCollection("blog", ({ data }) => {
+    return !data.draft;
+  });
+
+  // Ordenar posts por fecha para obtener navegación
+  const sortedPosts = posts.sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+
+  return sortedPosts.map((post, index) => {
+    const prevPost = index < sortedPosts.length - 1 ? sortedPosts[index + 1] : null;
+    const nextPost = index > 0 ? sortedPosts[index - 1] : null;
+
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        prevPost: prevPost ? { slug: prevPost.slug, title: prevPost.data.title } : undefined,
+        nextPost: nextPost ? { slug: nextPost.slug, title: nextPost.data.title } : undefined,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+export const prerender = true;
+
+const { post, prevPost, nextPost } = Astro.props;
+
+if (!post || Object.keys(post).length === 0) {
+  return Astro.redirect("/404");
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  category,
+  tags,
+  pubDate,
+  updatedDate,
+} = post.data;
+
+const { Content } = await post.render();
+const content = post.body;
+---
+
+<BlogLayout
+  title={title}
+  description={description}
+  image={image}
+  imageAlt={imageAlt}
+  category={category}
+  tags={tags}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  content={content}
+  prevPost={prevPost}
+  nextPost={nextPost}
+>
+  <Content />
+</BlogLayout>

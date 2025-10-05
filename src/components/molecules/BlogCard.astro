@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Chip from "@atoms/Chip.astro";
+import DateDisplay from "@atoms/DateDisplay.astro";
+import ReadingTime from "@atoms/ReadingTime.astro";
+import type { Category } from "@lib/content/getCategory";
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  category: Category;
+  tags: string[];
+  pubDate: Date;
+  content: string;
+}
+
+const { slug, title, description, image, imageAlt, category, pubDate, content } =
+  Astro.props;
+---
+
+<article
+  class="w-full md:w-1/2 mb-6 p-4 group"
+  transition:name={`blog-${slug}`}
+>
+  <a href={`/blog/${slug}`} class="block">
+    <div class="relative mb-2 rounded-xl overflow-hidden aspect-video">
+      <div class="absolute m-2 top-1 left-1 z-10">
+        <Chip category={category} baseUrl="/blog/category" asLink={false} />
+      </div>
+      <Image
+        src={image}
+        alt={imageAlt}
+        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+      />
+    </div>
+    <div class="px-2 flex flex-col justify-start">
+      <div class="flex items-center gap-3 mb-2">
+        <DateDisplay date={pubDate} />
+        <ReadingTime content={content} />
+      </div>
+      <h3
+        class="text-2xl mb-2 font-bold line-clamp-2 text-black dark:text-dark-text group-hover:text-main dark:group-hover:text-dark-main transition-colors"
+      >
+        {title}
+      </h3>
+      <p class="text-base text-gray dark:text-dark-text-secondary line-clamp-2">
+        {description}
+      </p>
+      <span
+        class="mt-3 inline-flex items-center text-main dark:text-dark-main font-medium"
+      >
+        Leer más →
+      </span>
+    </div>
+  </a>
+</article>
