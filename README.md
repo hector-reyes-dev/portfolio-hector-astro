@@ -30,7 +30,7 @@ Install the project via Git Clone or by downloading the Zip file.
 Once installed, don't forget to execute:
 
 ```
-npm install
+pnpm install
 ```
 
 ## Deploy 📦
@@ -38,7 +38,7 @@ npm install
 Run the project with:
 
 ```
-npm run dev
+pnpm run dev
 ```
 
 ## Built with 🛠️
